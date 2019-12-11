@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.data.warehouse.dao.glp.bluser.GlpCompanyBankMapper">
+  <resultMap id="BaseResultMap" type="com.glp.data.warehouse.entity.glp.bluser.GlpCompanyBank">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="enterprise_id" jdbcType="INTEGER" property="enterpriseId" />
+    <result column="back_username" jdbcType="VARCHAR" property="backUsername" />
+    <result column="back_number" jdbcType="VARCHAR" property="backNumber" />
+    <result column="back_name" jdbcType="VARCHAR" property="backName" />
+    <result column="bankCode" jdbcType="VARCHAR" property="bankcode" />
+    <result column="back_filiale" jdbcType="VARCHAR" property="backFiliale" />
+    <result column="branchNo" jdbcType="VARCHAR" property="branchno" />
+    <result column="provName" jdbcType="VARCHAR" property="provname" />
+    <result column="provId" jdbcType="INTEGER" property="provid" />
+    <result column="cityName" jdbcType="VARCHAR" property="cityname" />
+    <result column="cityId" jdbcType="INTEGER" property="cityid" />
+    <result column="instance_name" jdbcType="VARCHAR" property="instanceName" />
+    <result column="instance_number" jdbcType="VARCHAR" property="instanceNumber" />
+    <result column="instance_bank_extension" jdbcType="VARCHAR" property="instanceBankExtension" />
+    <result column="wj_loginName" jdbcType="VARCHAR" property="wjLoginname" />
+    <result column="wj_loginType" jdbcType="VARCHAR" property="wjLogintype" />
+    <result column="wj_member_id" jdbcType="VARCHAR" property="wjMemberId" />
+    <result column="wj_account_id" jdbcType="VARCHAR" property="wjAccountId" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="use_type" jdbcType="BIT" property="useType" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="company_id" jdbcType="INTEGER" property="companyId" />
+    <result column="source_type" jdbcType="BIT" property="sourceType" />
+    <result column="source_id" jdbcType="INTEGER" property="sourceId" />
+    <result column="audit_status" jdbcType="BIT" property="auditStatus" />
+    <result column="is_supplement" jdbcType="BIT" property="isSupplement" />
+    <result column="manualpullWater_queueId" jdbcType="INTEGER" property="manualpullwaterQueueid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, enterprise_id, back_username, back_number, back_name, bankCode, back_filiale, 
+    branchNo, provName, provId, cityName, cityId, instance_name, instance_number, instance_bank_extension, 
+    wj_loginName, wj_loginType, wj_member_id, wj_account_id, create_time, update_time, 
+    type, use_type, status, company_id, source_type, source_id, audit_status, is_supplement, 
+    manualpullWater_queueId
+  </sql>
+</mapper>

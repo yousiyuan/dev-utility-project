@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-risk-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend-risk-rule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hadoop-database-sample" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java8-script-engine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/middleware-kafka-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/multiple-database-sample" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools-mybatis-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools-mybatis-plus" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tools-mybatis-tk" charset="UTF-8" />
+  </component>
+</project>

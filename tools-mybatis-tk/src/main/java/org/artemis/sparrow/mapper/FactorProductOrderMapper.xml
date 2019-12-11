@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.artemis.sparrow.dao.FactorProductOrderMapper">
+  <resultMap id="BaseResultMap" type="org.artemis.sparrow.entity.FactorProductOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="product_list_id" jdbcType="INTEGER" property="productListId" />
+    <result column="credit_company_id" jdbcType="INTEGER" property="creditCompanyId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="buyer_organization_id" jdbcType="INTEGER" property="buyerOrganizationId" />
+    <result column="buyer_company_id" jdbcType="INTEGER" property="buyerCompanyId" />
+    <result column="seller_organization_id" jdbcType="INTEGER" property="sellerOrganizationId" />
+    <result column="seller_company_id" jdbcType="INTEGER" property="sellerCompanyId" />
+    <result column="buyer_apply_amount" jdbcType="DECIMAL" property="buyerApplyAmount" />
+    <result column="seller_apply_amount" jdbcType="DECIMAL" property="sellerApplyAmount" />
+    <result column="seller_apply_amount_time" jdbcType="INTEGER" property="sellerApplyAmountTime" />
+    <result column="third_organization_id" jdbcType="INTEGER" property="thirdOrganizationId" />
+    <result column="third_company_id" jdbcType="INTEGER" property="thirdCompanyId" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="product_type_name" jdbcType="VARCHAR" property="productTypeName" />
+    <result column="rate" jdbcType="DECIMAL" property="rate" />
+    <result column="due_time" jdbcType="INTEGER" property="dueTime" />
+    <result column="is_service" jdbcType="TINYINT" property="isService" />
+    <result column="sevice_amount" jdbcType="DECIMAL" property="seviceAmount" />
+    <result column="is_service_verification" jdbcType="TINYINT" property="isServiceVerification" />
+    <result column="service_verification_user_id" jdbcType="INTEGER" property="serviceVerificationUserId" />
+    <result column="service_verification_time" jdbcType="INTEGER" property="serviceVerificationTime" />
+    <result column="repayment_bank_name" jdbcType="VARCHAR" property="repaymentBankName" />
+    <result column="repayment_back_filiale" jdbcType="VARCHAR" property="repaymentBackFiliale" />
+    <result column="repayment_back_username" jdbcType="VARCHAR" property="repaymentBackUsername" />
+    <result column="repayment_bank_number" jdbcType="VARCHAR" property="repaymentBankNumber" />
+    <result column="receipt_bank_name" jdbcType="VARCHAR" property="receiptBankName" />
+    <result column="receipt_bank_code" jdbcType="VARCHAR" property="receiptBankCode" />
+    <result column="receipt_bank_filiale" jdbcType="VARCHAR" property="receiptBankFiliale" />
+    <result column="receipt_bank_filiale_branchNo" jdbcType="VARCHAR" property="receiptBankFilialeBranchno" />
+    <result column="receipt_bank_provName" jdbcType="VARCHAR" property="receiptBankProvname" />
+    <result column="receipt_bank_cityName" jdbcType="VARCHAR" property="receiptBankCityname" />
+    <result column="receipt_bank_username" jdbcType="VARCHAR" property="receiptBankUsername" />
+    <result column="receipt_bank_number" jdbcType="VARCHAR" property="receiptBankNumber" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="pay_bank_name" jdbcType="VARCHAR" property="payBankName" />
+    <result column="pay_bank_filiale" jdbcType="VARCHAR" property="payBankFiliale" />
+    <result column="pay_bank_real_number" jdbcType="VARCHAR" property="payBankRealNumber" />
+    <result column="pay_bank_extension" jdbcType="VARCHAR" property="payBankExtension" />
+    <result column="pay_bank_username" jdbcType="VARCHAR" property="payBankUsername" />
+    <result column="pay_bank_number" jdbcType="VARCHAR" property="payBankNumber" />
+    <result column="pay_order_number" jdbcType="VARCHAR" property="payOrderNumber" />
+    <result column="pay_notes" jdbcType="VARCHAR" property="payNotes" />
+    <result column="pay_status" jdbcType="TINYINT" property="payStatus" />
+    <result column="pledge_number" jdbcType="VARCHAR" property="pledgeNumber" />
+    <result column="estimate_pay_time" jdbcType="INTEGER" property="estimatePayTime" />
+    <result column="pay_success_time" jdbcType="INTEGER" property="paySuccessTime" />
+    <result column="pay_notice_time" jdbcType="INTEGER" property="payNoticeTime" />
+    <result column="callback_url" jdbcType="VARCHAR" property="callbackUrl" />
+    <result column="account_bill_notice_url" jdbcType="VARCHAR" property="accountBillNoticeUrl" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="audit_status" jdbcType="TINYINT" property="auditStatus" />
+    <result column="is_close" jdbcType="TINYINT" property="isClose" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="break_rate" jdbcType="DECIMAL" property="breakRate" />
+    <result column="is_grace_period" jdbcType="BIT" property="isGracePeriod" />
+    <result column="grace_period" jdbcType="INTEGER" property="gracePeriod" />
+    <result column="grace_period_rate" jdbcType="DECIMAL" property="gracePeriodRate" />
+    <result column="compound_rate" jdbcType="DECIMAL" property="compoundRate" />
+    <result column="repeat_repayment_instance_name" jdbcType="VARCHAR" property="repeatRepaymentInstanceName" />
+    <result column="repeat_repayment_instance_number" jdbcType="VARCHAR" property="repeatRepaymentInstanceNumber" />
+    <result column="repeat_repayment_bank_extension" jdbcType="VARCHAR" property="repeatRepaymentBankExtension" />
+    <result column="repeat_repayment_bank_name" jdbcType="VARCHAR" property="repeatRepaymentBankName" />
+    <result column="repeat_repayment_back_filiale" jdbcType="VARCHAR" property="repeatRepaymentBackFiliale" />
+    <result column="repeat_repayment_back_username" jdbcType="VARCHAR" property="repeatRepaymentBackUsername" />
+    <result column="repeat_repayment_bank_number" jdbcType="VARCHAR" property="repeatRepaymentBankNumber" />
+    <result column="payment_method" jdbcType="BIT" property="paymentMethod" />
+    <result column="repayment_time" jdbcType="INTEGER" property="repaymentTime" />
+    <result column="interest_time" jdbcType="INTEGER" property="interestTime" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
+    <result column="trans_seq" jdbcType="VARCHAR" property="transSeq" />
+    <result column="trans_step" jdbcType="CHAR" property="transStep" />
+    <result column="trans_order_seq" jdbcType="INTEGER" property="transOrderSeq" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="apply_amount" jdbcType="DECIMAL" property="applyAmount" />
+    <result column="credit_line_id" jdbcType="INTEGER" property="creditLineId" />
+    <result column="latest_credit_line_id" jdbcType="INTEGER" property="latestCreditLineId" />
+    <result column="credit_description" jdbcType="VARCHAR" property="creditDescription" />
+    <result column="client_number" jdbcType="VARCHAR" property="clientNumber" />
+    <result column="order_status" jdbcType="BIT" property="orderStatus" />
+    <result column="custom_seller_company_id" jdbcType="VARCHAR" property="customSellerCompanyId" />
+    <result column="manual_audit_reason" jdbcType="VARCHAR" property="manualAuditReason" />
+    <result column="buyer_company_ids" jdbcType="VARCHAR" property="buyerCompanyIds" />
+    <result column="contract_sign_url" jdbcType="VARCHAR" property="contractSignUrl" />
+    <result column="pay_bank_ANI" jdbcType="VARCHAR" property="payBankAni" />
+    <result column="fee_rollback_status" jdbcType="BIT" property="feeRollbackStatus" />
+    <result column="fee_rollback_time" jdbcType="INTEGER" property="feeRollbackTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="org.artemis.sparrow.entity.FactorProductOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="buyer_company_names" jdbcType="LONGVARCHAR" property="buyerCompanyNames" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, product_list_id, credit_company_id, source, order_number, buyer_organization_id, 
+    buyer_company_id, seller_organization_id, seller_company_id, buyer_apply_amount, 
+    seller_apply_amount, seller_apply_amount_time, third_organization_id, third_company_id, 
+    amount, product_type_name, rate, due_time, is_service, sevice_amount, is_service_verification, 
+    service_verification_user_id, service_verification_time, repayment_bank_name, repayment_back_filiale, 
+    repayment_back_username, repayment_bank_number, receipt_bank_name, receipt_bank_code, 
+    receipt_bank_filiale, receipt_bank_filiale_branchNo, receipt_bank_provName, receipt_bank_cityName, 
+    receipt_bank_username, receipt_bank_number, pay_type, pay_bank_name, pay_bank_filiale, 
+    pay_bank_real_number, pay_bank_extension, pay_bank_username, pay_bank_number, pay_order_number, 
+    pay_notes, pay_status, pledge_number, estimate_pay_time, pay_success_time, pay_notice_time, 
+    callback_url, account_bill_notice_url, status, audit_status, is_close, create_time, 
+    update_time, break_rate, is_grace_period, grace_period, grace_period_rate, compound_rate, 
+    repeat_repayment_instance_name, repeat_repayment_instance_number, repeat_repayment_bank_extension, 
+    repeat_repayment_bank_name, repeat_repayment_back_filiale, repeat_repayment_back_username, 
+    repeat_repayment_bank_number, payment_method, repayment_time, interest_time, transaction_id, 
+    trans_seq, trans_step, trans_order_seq, phone_number, apply_amount, credit_line_id, 
+    latest_credit_line_id, credit_description, client_number, order_status, custom_seller_company_id, 
+    manual_audit_reason, buyer_company_ids, contract_sign_url, pay_bank_ANI, fee_rollback_status, 
+    fee_rollback_time
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    buyer_company_names
+  </sql>
+</mapper>

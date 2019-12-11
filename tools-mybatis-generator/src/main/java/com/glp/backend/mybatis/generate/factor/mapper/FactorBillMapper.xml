@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.backend.mybatis.generate.factor.dao.FactorBillMapper">
+  <resultMap id="BaseResultMap" type="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="factor_order_id" jdbcType="INTEGER" property="factorOrderId" />
+    <result column="order_type" jdbcType="TINYINT" property="orderType" />
+    <result column="factor_requisition_id" jdbcType="INTEGER" property="factorRequisitionId" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="time_limit" jdbcType="INTEGER" property="timeLimit" />
+    <result column="rate" jdbcType="DECIMAL" property="rate" />
+    <result column="buyer_enterprise_id" jdbcType="INTEGER" property="buyerEnterpriseId" />
+    <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+    <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
+    <result column="seller_enterprise_id" jdbcType="INTEGER" property="sellerEnterpriseId" />
+    <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+    <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+    <result column="interest_time" jdbcType="INTEGER" property="interestTime" />
+    <result column="end_repayment_time" jdbcType="INTEGER" property="endRepaymentTime" />
+    <result column="pay_bank_real_number" jdbcType="VARCHAR" property="payBankRealNumber" />
+    <result column="payerCity" jdbcType="VARCHAR" property="payercity" />
+    <result column="repayment_back_username" jdbcType="VARCHAR" property="repaymentBackUsername" />
+    <result column="repayment_bank_number" jdbcType="VARCHAR" property="repaymentBankNumber" />
+    <result column="estimate_repayment_amount" jdbcType="DECIMAL" property="estimateRepaymentAmount" />
+    <result column="estimate_balance" jdbcType="DECIMAL" property="estimateBalance" />
+    <result column="estimate_interest" jdbcType="DECIMAL" property="estimateInterest" />
+    <result column="reality_balance" jdbcType="DECIMAL" property="realityBalance" />
+    <result column="reality_interest" jdbcType="DECIMAL" property="realityInterest" />
+    <result column="reality_normal_interest" jdbcType="DECIMAL" property="realityNormalInterest" />
+    <result column="reality_grace_interest" jdbcType="DECIMAL" property="realityGraceInterest" />
+    <result column="reality_break_interest" jdbcType="DECIMAL" property="realityBreakInterest" />
+    <result column="reality_compound_interest" jdbcType="DECIMAL" property="realityCompoundInterest" />
+    <result column="today_interest" jdbcType="DECIMAL" property="todayInterest" />
+    <result column="today_normal_interest" jdbcType="DECIMAL" property="todayNormalInterest" />
+    <result column="today_grace_interest" jdbcType="DECIMAL" property="todayGraceInterest" />
+    <result column="today_break_interest" jdbcType="DECIMAL" property="todayBreakInterest" />
+    <result column="today_compound_interest" jdbcType="DECIMAL" property="todayCompoundInterest" />
+    <result column="surplus_balance" jdbcType="DECIMAL" property="surplusBalance" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="settle_time" jdbcType="INTEGER" property="settleTime" />
+    <result column="is_compensatory" jdbcType="BIT" property="isCompensatory" />
+    <result column="is_reduce_interest" jdbcType="BIT" property="isReduceInterest" />
+    <result column="reduce_interest_amount" jdbcType="DECIMAL" property="reduceInterestAmount" />
+    <result column="buyer_company_ids" jdbcType="VARCHAR" property="buyerCompanyIds" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="is_bad_debt" jdbcType="BIT" property="isBadDebt" />
+    <result column="bad_reality_interest_to_balance" jdbcType="DECIMAL" property="badRealityInterestToBalance" />
+    <result column="bad_strike_balance" jdbcType="DECIMAL" property="badStrikeBalance" />
+    <result column="bad_balance" jdbcType="DECIMAL" property="badBalance" />
+    <result column="bad_interest" jdbcType="DECIMAL" property="badInterest" />
+    <result column="bad_strike_interest" jdbcType="DECIMAL" property="badStrikeInterest" />
+    <result column="is_compensatory_interest" jdbcType="BIT" property="isCompensatoryInterest" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    <result column="buyer_company_names" jdbcType="LONGVARCHAR" property="buyerCompanyNames" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, factor_order_id, order_type, factor_requisition_id, order_number, number, amount, 
+    time_limit, rate, buyer_enterprise_id, buyer_id, buyer_name, seller_enterprise_id, 
+    seller_id, seller_name, interest_time, end_repayment_time, pay_bank_real_number, 
+    payerCity, repayment_back_username, repayment_bank_number, estimate_repayment_amount, 
+    estimate_balance, estimate_interest, reality_balance, reality_interest, reality_normal_interest, 
+    reality_grace_interest, reality_break_interest, reality_compound_interest, today_interest, 
+    today_normal_interest, today_grace_interest, today_break_interest, today_compound_interest, 
+    surplus_balance, status, settle_time, is_compensatory, is_reduce_interest, reduce_interest_amount, 
+    buyer_company_ids, create_time, update_time, is_bad_debt, bad_reality_interest_to_balance, 
+    bad_strike_balance, bad_balance, bad_interest, bad_strike_interest, is_compensatory_interest
+  </sql>
+  <sql id="Blob_Column_List">
+    buyer_company_names
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBillExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from factor_bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBillExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from factor_bill
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBillKey" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from factor_bill
+    where id = #{id,jdbcType=INTEGER}
+      and factor_order_id = #{factorOrderId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBillKey">
+    delete from factor_bill
+    where id = #{id,jdbcType=INTEGER}
+      and factor_order_id = #{factorOrderId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    insert into factor_bill (id, factor_order_id, order_type, 
+      factor_requisition_id, order_number, number, 
+      amount, time_limit, rate, 
+      buyer_enterprise_id, buyer_id, buyer_name, 
+      seller_enterprise_id, seller_id, seller_name, 
+      interest_time, end_repayment_time, pay_bank_real_number, 
+      payerCity, repayment_back_username, repayment_bank_number, 
+      estimate_repayment_amount, estimate_balance, 
+      estimate_interest, reality_balance, reality_interest, 
+      reality_normal_interest, reality_grace_interest, 
+      reality_break_interest, reality_compound_interest, 
+      today_interest, today_normal_interest, today_grace_interest, 
+      today_break_interest, today_compound_interest, 
+      surplus_balance, status, settle_time, 
+      is_compensatory, is_reduce_interest, reduce_interest_amount, 
+      buyer_company_ids, create_time, update_time, 
+      is_bad_debt, bad_reality_interest_to_balance, bad_strike_balance, 
+      bad_balance, bad_interest, bad_strike_interest, 
+      is_compensatory_interest, buyer_company_names
+      )
+    values (#{id,jdbcType=INTEGER}, #{factorOrderId,jdbcType=INTEGER}, #{orderType,jdbcType=TINYINT}, 
+      #{factorRequisitionId,jdbcType=INTEGER}, #{orderNumber,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{amount,jdbcType=DECIMAL}, #{timeLimit,jdbcType=INTEGER}, #{rate,jdbcType=DECIMAL}, 
+      #{buyerEnterpriseId,jdbcType=INTEGER}, #{buyerId,jdbcType=INTEGER}, #{buyerName,jdbcType=VARCHAR}, 
+      #{sellerEnterpriseId,jdbcType=INTEGER}, #{sellerId,jdbcType=INTEGER}, #{sellerName,jdbcType=VARCHAR}, 
+      #{interestTime,jdbcType=INTEGER}, #{endRepaymentTime,jdbcType=INTEGER}, #{payBankRealNumber,jdbcType=VARCHAR}, 
+      #{payercity,jdbcType=VARCHAR}, #{repaymentBackUsername,jdbcType=VARCHAR}, #{repaymentBankNumber,jdbcType=VARCHAR}, 
+      #{estimateRepaymentAmount,jdbcType=DECIMAL}, #{estimateBalance,jdbcType=DECIMAL}, 
+      #{estimateInterest,jdbcType=DECIMAL}, #{realityBalance,jdbcType=DECIMAL}, #{realityInterest,jdbcType=DECIMAL}, 
+      #{realityNormalInterest,jdbcType=DECIMAL}, #{realityGraceInterest,jdbcType=DECIMAL}, 
+      #{realityBreakInterest,jdbcType=DECIMAL}, #{realityCompoundInterest,jdbcType=DECIMAL}, 
+      #{todayInterest,jdbcType=DECIMAL}, #{todayNormalInterest,jdbcType=DECIMAL}, #{todayGraceInterest,jdbcType=DECIMAL}, 
+      #{todayBreakInterest,jdbcType=DECIMAL}, #{todayCompoundInterest,jdbcType=DECIMAL}, 
+      #{surplusBalance,jdbcType=DECIMAL}, #{status,jdbcType=TINYINT}, #{settleTime,jdbcType=INTEGER}, 
+      #{isCompensatory,jdbcType=BIT}, #{isReduceInterest,jdbcType=BIT}, #{reduceInterestAmount,jdbcType=DECIMAL}, 
+      #{buyerCompanyIds,jdbcType=VARCHAR}, #{createTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, 
+      #{isBadDebt,jdbcType=BIT}, #{badRealityInterestToBalance,jdbcType=DECIMAL}, #{badStrikeBalance,jdbcType=DECIMAL}, 
+      #{badBalance,jdbcType=DECIMAL}, #{badInterest,jdbcType=DECIMAL}, #{badStrikeInterest,jdbcType=DECIMAL}, 
+      #{isCompensatoryInterest,jdbcType=BIT}, #{buyerCompanyNames,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    insert into factor_bill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="factorOrderId != null">
+        factor_order_id,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="factorRequisitionId != null">
+        factor_requisition_id,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="number != null">
+        number,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="timeLimit != null">
+        time_limit,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+      <if test="buyerEnterpriseId != null">
+        buyer_enterprise_id,
+      </if>
+      <if test="buyerId != null">
+        buyer_id,
+      </if>
+      <if test="buyerName != null">
+        buyer_name,
+      </if>
+      <if test="sellerEnterpriseId != null">
+        seller_enterprise_id,
+      </if>
+      <if test="sellerId != null">
+        seller_id,
+      </if>
+      <if test="sellerName != null">
+        seller_name,
+      </if>
+      <if test="interestTime != null">
+        interest_time,
+      </if>
+      <if test="endRepaymentTime != null">
+        end_repayment_time,
+      </if>
+      <if test="payBankRealNumber != null">
+        pay_bank_real_number,
+      </if>
+      <if test="payercity != null">
+        payerCity,
+      </if>
+      <if test="repaymentBackUsername != null">
+        repayment_back_username,
+      </if>
+      <if test="repaymentBankNumber != null">
+        repayment_bank_number,
+      </if>
+      <if test="estimateRepaymentAmount != null">
+        estimate_repayment_amount,
+      </if>
+      <if test="estimateBalance != null">
+        estimate_balance,
+      </if>
+      <if test="estimateInterest != null">
+        estimate_interest,
+      </if>
+      <if test="realityBalance != null">
+        reality_balance,
+      </if>
+      <if test="realityInterest != null">
+        reality_interest,
+      </if>
+      <if test="realityNormalInterest != null">
+        reality_normal_interest,
+      </if>
+      <if test="realityGraceInterest != null">
+        reality_grace_interest,
+      </if>
+      <if test="realityBreakInterest != null">
+        reality_break_interest,
+      </if>
+      <if test="realityCompoundInterest != null">
+        reality_compound_interest,
+      </if>
+      <if test="todayInterest != null">
+        today_interest,
+      </if>
+      <if test="todayNormalInterest != null">
+        today_normal_interest,
+      </if>
+      <if test="todayGraceInterest != null">
+        today_grace_interest,
+      </if>
+      <if test="todayBreakInterest != null">
+        today_break_interest,
+      </if>
+      <if test="todayCompoundInterest != null">
+        today_compound_interest,
+      </if>
+      <if test="surplusBalance != null">
+        surplus_balance,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="settleTime != null">
+        settle_time,
+      </if>
+      <if test="isCompensatory != null">
+        is_compensatory,
+      </if>
+      <if test="isReduceInterest != null">
+        is_reduce_interest,
+      </if>
+      <if test="reduceInterestAmount != null">
+        reduce_interest_amount,
+      </if>
+      <if test="buyerCompanyIds != null">
+        buyer_company_ids,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isBadDebt != null">
+        is_bad_debt,
+      </if>
+      <if test="badRealityInterestToBalance != null">
+        bad_reality_interest_to_balance,
+      </if>
+      <if test="badStrikeBalance != null">
+        bad_strike_balance,
+      </if>
+      <if test="badBalance != null">
+        bad_balance,
+      </if>
+      <if test="badInterest != null">
+        bad_interest,
+      </if>
+      <if test="badStrikeInterest != null">
+        bad_strike_interest,
+      </if>
+      <if test="isCompensatoryInterest != null">
+        is_compensatory_interest,
+      </if>
+      <if test="buyerCompanyNames != null">
+        buyer_company_names,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="factorOrderId != null">
+        #{factorOrderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="factorRequisitionId != null">
+        #{factorRequisitionId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="timeLimit != null">
+        #{timeLimit,jdbcType=INTEGER},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="buyerEnterpriseId != null">
+        #{buyerEnterpriseId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerId != null">
+        #{buyerId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerName != null">
+        #{buyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerEnterpriseId != null">
+        #{sellerEnterpriseId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerId != null">
+        #{sellerId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerName != null">
+        #{sellerName,jdbcType=VARCHAR},
+      </if>
+      <if test="interestTime != null">
+        #{interestTime,jdbcType=INTEGER},
+      </if>
+      <if test="endRepaymentTime != null">
+        #{endRepaymentTime,jdbcType=INTEGER},
+      </if>
+      <if test="payBankRealNumber != null">
+        #{payBankRealNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payercity != null">
+        #{payercity,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackUsername != null">
+        #{repaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBankNumber != null">
+        #{repaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="estimateRepaymentAmount != null">
+        #{estimateRepaymentAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="estimateBalance != null">
+        #{estimateBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="estimateInterest != null">
+        #{estimateInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityBalance != null">
+        #{realityBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="realityInterest != null">
+        #{realityInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityNormalInterest != null">
+        #{realityNormalInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityGraceInterest != null">
+        #{realityGraceInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityBreakInterest != null">
+        #{realityBreakInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityCompoundInterest != null">
+        #{realityCompoundInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayInterest != null">
+        #{todayInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayNormalInterest != null">
+        #{todayNormalInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayGraceInterest != null">
+        #{todayGraceInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayBreakInterest != null">
+        #{todayBreakInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayCompoundInterest != null">
+        #{todayCompoundInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="surplusBalance != null">
+        #{surplusBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="settleTime != null">
+        #{settleTime,jdbcType=INTEGER},
+      </if>
+      <if test="isCompensatory != null">
+        #{isCompensatory,jdbcType=BIT},
+      </if>
+      <if test="isReduceInterest != null">
+        #{isReduceInterest,jdbcType=BIT},
+      </if>
+      <if test="reduceInterestAmount != null">
+        #{reduceInterestAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="buyerCompanyIds != null">
+        #{buyerCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isBadDebt != null">
+        #{isBadDebt,jdbcType=BIT},
+      </if>
+      <if test="badRealityInterestToBalance != null">
+        #{badRealityInterestToBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badStrikeBalance != null">
+        #{badStrikeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badBalance != null">
+        #{badBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badInterest != null">
+        #{badInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="badStrikeInterest != null">
+        #{badStrikeInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="isCompensatoryInterest != null">
+        #{isCompensatoryInterest,jdbcType=BIT},
+      </if>
+      <if test="buyerCompanyNames != null">
+        #{buyerCompanyNames,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    update factor_bill
+    <set>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="factorRequisitionId != null">
+        factor_requisition_id = #{factorRequisitionId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="timeLimit != null">
+        time_limit = #{timeLimit,jdbcType=INTEGER},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="buyerEnterpriseId != null">
+        buyer_enterprise_id = #{buyerEnterpriseId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerId != null">
+        buyer_id = #{buyerId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerName != null">
+        buyer_name = #{buyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerEnterpriseId != null">
+        seller_enterprise_id = #{sellerEnterpriseId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerId != null">
+        seller_id = #{sellerId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerName != null">
+        seller_name = #{sellerName,jdbcType=VARCHAR},
+      </if>
+      <if test="interestTime != null">
+        interest_time = #{interestTime,jdbcType=INTEGER},
+      </if>
+      <if test="endRepaymentTime != null">
+        end_repayment_time = #{endRepaymentTime,jdbcType=INTEGER},
+      </if>
+      <if test="payBankRealNumber != null">
+        pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payercity != null">
+        payerCity = #{payercity,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackUsername != null">
+        repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBankNumber != null">
+        repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="estimateRepaymentAmount != null">
+        estimate_repayment_amount = #{estimateRepaymentAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="estimateBalance != null">
+        estimate_balance = #{estimateBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="estimateInterest != null">
+        estimate_interest = #{estimateInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityBalance != null">
+        reality_balance = #{realityBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="realityInterest != null">
+        reality_interest = #{realityInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityNormalInterest != null">
+        reality_normal_interest = #{realityNormalInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityGraceInterest != null">
+        reality_grace_interest = #{realityGraceInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityBreakInterest != null">
+        reality_break_interest = #{realityBreakInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="realityCompoundInterest != null">
+        reality_compound_interest = #{realityCompoundInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayInterest != null">
+        today_interest = #{todayInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayNormalInterest != null">
+        today_normal_interest = #{todayNormalInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayGraceInterest != null">
+        today_grace_interest = #{todayGraceInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayBreakInterest != null">
+        today_break_interest = #{todayBreakInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="todayCompoundInterest != null">
+        today_compound_interest = #{todayCompoundInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="surplusBalance != null">
+        surplus_balance = #{surplusBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="settleTime != null">
+        settle_time = #{settleTime,jdbcType=INTEGER},
+      </if>
+      <if test="isCompensatory != null">
+        is_compensatory = #{isCompensatory,jdbcType=BIT},
+      </if>
+      <if test="isReduceInterest != null">
+        is_reduce_interest = #{isReduceInterest,jdbcType=BIT},
+      </if>
+      <if test="reduceInterestAmount != null">
+        reduce_interest_amount = #{reduceInterestAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="buyerCompanyIds != null">
+        buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isBadDebt != null">
+        is_bad_debt = #{isBadDebt,jdbcType=BIT},
+      </if>
+      <if test="badRealityInterestToBalance != null">
+        bad_reality_interest_to_balance = #{badRealityInterestToBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badStrikeBalance != null">
+        bad_strike_balance = #{badStrikeBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badBalance != null">
+        bad_balance = #{badBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badInterest != null">
+        bad_interest = #{badInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="badStrikeInterest != null">
+        bad_strike_interest = #{badStrikeInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="isCompensatoryInterest != null">
+        is_compensatory_interest = #{isCompensatoryInterest,jdbcType=BIT},
+      </if>
+      <if test="buyerCompanyNames != null">
+        buyer_company_names = #{buyerCompanyNames,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and factor_order_id = #{factorOrderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    update factor_bill
+    set order_type = #{orderType,jdbcType=TINYINT},
+      factor_requisition_id = #{factorRequisitionId,jdbcType=INTEGER},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      number = #{number,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=DECIMAL},
+      time_limit = #{timeLimit,jdbcType=INTEGER},
+      rate = #{rate,jdbcType=DECIMAL},
+      buyer_enterprise_id = #{buyerEnterpriseId,jdbcType=INTEGER},
+      buyer_id = #{buyerId,jdbcType=INTEGER},
+      buyer_name = #{buyerName,jdbcType=VARCHAR},
+      seller_enterprise_id = #{sellerEnterpriseId,jdbcType=INTEGER},
+      seller_id = #{sellerId,jdbcType=INTEGER},
+      seller_name = #{sellerName,jdbcType=VARCHAR},
+      interest_time = #{interestTime,jdbcType=INTEGER},
+      end_repayment_time = #{endRepaymentTime,jdbcType=INTEGER},
+      pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      payerCity = #{payercity,jdbcType=VARCHAR},
+      repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      estimate_repayment_amount = #{estimateRepaymentAmount,jdbcType=DECIMAL},
+      estimate_balance = #{estimateBalance,jdbcType=DECIMAL},
+      estimate_interest = #{estimateInterest,jdbcType=DECIMAL},
+      reality_balance = #{realityBalance,jdbcType=DECIMAL},
+      reality_interest = #{realityInterest,jdbcType=DECIMAL},
+      reality_normal_interest = #{realityNormalInterest,jdbcType=DECIMAL},
+      reality_grace_interest = #{realityGraceInterest,jdbcType=DECIMAL},
+      reality_break_interest = #{realityBreakInterest,jdbcType=DECIMAL},
+      reality_compound_interest = #{realityCompoundInterest,jdbcType=DECIMAL},
+      today_interest = #{todayInterest,jdbcType=DECIMAL},
+      today_normal_interest = #{todayNormalInterest,jdbcType=DECIMAL},
+      today_grace_interest = #{todayGraceInterest,jdbcType=DECIMAL},
+      today_break_interest = #{todayBreakInterest,jdbcType=DECIMAL},
+      today_compound_interest = #{todayCompoundInterest,jdbcType=DECIMAL},
+      surplus_balance = #{surplusBalance,jdbcType=DECIMAL},
+      status = #{status,jdbcType=TINYINT},
+      settle_time = #{settleTime,jdbcType=INTEGER},
+      is_compensatory = #{isCompensatory,jdbcType=BIT},
+      is_reduce_interest = #{isReduceInterest,jdbcType=BIT},
+      reduce_interest_amount = #{reduceInterestAmount,jdbcType=DECIMAL},
+      buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_bad_debt = #{isBadDebt,jdbcType=BIT},
+      bad_reality_interest_to_balance = #{badRealityInterestToBalance,jdbcType=DECIMAL},
+      bad_strike_balance = #{badStrikeBalance,jdbcType=DECIMAL},
+      bad_balance = #{badBalance,jdbcType=DECIMAL},
+      bad_interest = #{badInterest,jdbcType=DECIMAL},
+      bad_strike_interest = #{badStrikeInterest,jdbcType=DECIMAL},
+      is_compensatory_interest = #{isCompensatoryInterest,jdbcType=BIT},
+      buyer_company_names = #{buyerCompanyNames,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and factor_order_id = #{factorOrderId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorBill">
+    update factor_bill
+    set order_type = #{orderType,jdbcType=TINYINT},
+      factor_requisition_id = #{factorRequisitionId,jdbcType=INTEGER},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      number = #{number,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=DECIMAL},
+      time_limit = #{timeLimit,jdbcType=INTEGER},
+      rate = #{rate,jdbcType=DECIMAL},
+      buyer_enterprise_id = #{buyerEnterpriseId,jdbcType=INTEGER},
+      buyer_id = #{buyerId,jdbcType=INTEGER},
+      buyer_name = #{buyerName,jdbcType=VARCHAR},
+      seller_enterprise_id = #{sellerEnterpriseId,jdbcType=INTEGER},
+      seller_id = #{sellerId,jdbcType=INTEGER},
+      seller_name = #{sellerName,jdbcType=VARCHAR},
+      interest_time = #{interestTime,jdbcType=INTEGER},
+      end_repayment_time = #{endRepaymentTime,jdbcType=INTEGER},
+      pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      payerCity = #{payercity,jdbcType=VARCHAR},
+      repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      estimate_repayment_amount = #{estimateRepaymentAmount,jdbcType=DECIMAL},
+      estimate_balance = #{estimateBalance,jdbcType=DECIMAL},
+      estimate_interest = #{estimateInterest,jdbcType=DECIMAL},
+      reality_balance = #{realityBalance,jdbcType=DECIMAL},
+      reality_interest = #{realityInterest,jdbcType=DECIMAL},
+      reality_normal_interest = #{realityNormalInterest,jdbcType=DECIMAL},
+      reality_grace_interest = #{realityGraceInterest,jdbcType=DECIMAL},
+      reality_break_interest = #{realityBreakInterest,jdbcType=DECIMAL},
+      reality_compound_interest = #{realityCompoundInterest,jdbcType=DECIMAL},
+      today_interest = #{todayInterest,jdbcType=DECIMAL},
+      today_normal_interest = #{todayNormalInterest,jdbcType=DECIMAL},
+      today_grace_interest = #{todayGraceInterest,jdbcType=DECIMAL},
+      today_break_interest = #{todayBreakInterest,jdbcType=DECIMAL},
+      today_compound_interest = #{todayCompoundInterest,jdbcType=DECIMAL},
+      surplus_balance = #{surplusBalance,jdbcType=DECIMAL},
+      status = #{status,jdbcType=TINYINT},
+      settle_time = #{settleTime,jdbcType=INTEGER},
+      is_compensatory = #{isCompensatory,jdbcType=BIT},
+      is_reduce_interest = #{isReduceInterest,jdbcType=BIT},
+      reduce_interest_amount = #{reduceInterestAmount,jdbcType=DECIMAL},
+      buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_bad_debt = #{isBadDebt,jdbcType=BIT},
+      bad_reality_interest_to_balance = #{badRealityInterestToBalance,jdbcType=DECIMAL},
+      bad_strike_balance = #{badStrikeBalance,jdbcType=DECIMAL},
+      bad_balance = #{badBalance,jdbcType=DECIMAL},
+      bad_interest = #{badInterest,jdbcType=DECIMAL},
+      bad_strike_interest = #{badStrikeInterest,jdbcType=DECIMAL},
+      is_compensatory_interest = #{isCompensatoryInterest,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+      and factor_order_id = #{factorOrderId,jdbcType=INTEGER}
+  </update>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into factor_bill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].factorOrderId!=null">
+        factor_order_id,
+      </if>
+      <if test="list[0].orderType!=null">
+        order_type,
+      </if>
+      <if test="list[0].factorRequisitionId!=null">
+        factor_requisition_id,
+      </if>
+      <if test="list[0].orderNumber!=null">
+        order_number,
+      </if>
+      <if test="list[0].number!=null">
+        number,
+      </if>
+      <if test="list[0].amount!=null">
+        amount,
+      </if>
+      <if test="list[0].timeLimit!=null">
+        time_limit,
+      </if>
+      <if test="list[0].rate!=null">
+        rate,
+      </if>
+      <if test="list[0].buyerEnterpriseId!=null">
+        buyer_enterprise_id,
+      </if>
+      <if test="list[0].buyerId!=null">
+        buyer_id,
+      </if>
+      <if test="list[0].buyerName!=null">
+        buyer_name,
+      </if>
+      <if test="list[0].sellerEnterpriseId!=null">
+        seller_enterprise_id,
+      </if>
+      <if test="list[0].sellerId!=null">
+        seller_id,
+      </if>
+      <if test="list[0].sellerName!=null">
+        seller_name,
+      </if>
+      <if test="list[0].interestTime!=null">
+        interest_time,
+      </if>
+      <if test="list[0].endRepaymentTime!=null">
+        end_repayment_time,
+      </if>
+      <if test="list[0].payBankRealNumber!=null">
+        pay_bank_real_number,
+      </if>
+      <if test="list[0].payercity!=null">
+        payerCity,
+      </if>
+      <if test="list[0].repaymentBackUsername!=null">
+        repayment_back_username,
+      </if>
+      <if test="list[0].repaymentBankNumber!=null">
+        repayment_bank_number,
+      </if>
+      <if test="list[0].estimateRepaymentAmount!=null">
+        estimate_repayment_amount,
+      </if>
+      <if test="list[0].estimateBalance!=null">
+        estimate_balance,
+      </if>
+      <if test="list[0].estimateInterest!=null">
+        estimate_interest,
+      </if>
+      <if test="list[0].realityBalance!=null">
+        reality_balance,
+      </if>
+      <if test="list[0].realityInterest!=null">
+        reality_interest,
+      </if>
+      <if test="list[0].realityNormalInterest!=null">
+        reality_normal_interest,
+      </if>
+      <if test="list[0].realityGraceInterest!=null">
+        reality_grace_interest,
+      </if>
+      <if test="list[0].realityBreakInterest!=null">
+        reality_break_interest,
+      </if>
+      <if test="list[0].realityCompoundInterest!=null">
+        reality_compound_interest,
+      </if>
+      <if test="list[0].todayInterest!=null">
+        today_interest,
+      </if>
+      <if test="list[0].todayNormalInterest!=null">
+        today_normal_interest,
+      </if>
+      <if test="list[0].todayGraceInterest!=null">
+        today_grace_interest,
+      </if>
+      <if test="list[0].todayBreakInterest!=null">
+        today_break_interest,
+      </if>
+      <if test="list[0].todayCompoundInterest!=null">
+        today_compound_interest,
+      </if>
+      <if test="list[0].surplusBalance!=null">
+        surplus_balance,
+      </if>
+      <if test="list[0].status!=null">
+        status,
+      </if>
+      <if test="list[0].settleTime!=null">
+        settle_time,
+      </if>
+      <if test="list[0].isCompensatory!=null">
+        is_compensatory,
+      </if>
+      <if test="list[0].isReduceInterest!=null">
+        is_reduce_interest,
+      </if>
+      <if test="list[0].reduceInterestAmount!=null">
+        reduce_interest_amount,
+      </if>
+      <if test="list[0].buyerCompanyIds!=null">
+        buyer_company_ids,
+      </if>
+      <if test="list[0].createTime!=null">
+        create_time,
+      </if>
+      <if test="list[0].updateTime!=null">
+        update_time,
+      </if>
+      <if test="list[0].isBadDebt!=null">
+        is_bad_debt,
+      </if>
+      <if test="list[0].badRealityInterestToBalance!=null">
+        bad_reality_interest_to_balance,
+      </if>
+      <if test="list[0].badStrikeBalance!=null">
+        bad_strike_balance,
+      </if>
+      <if test="list[0].badBalance!=null">
+        bad_balance,
+      </if>
+      <if test="list[0].badInterest!=null">
+        bad_interest,
+      </if>
+      <if test="list[0].badStrikeInterest!=null">
+        bad_strike_interest,
+      </if>
+      <if test="list[0].isCompensatoryInterest!=null">
+        is_compensatory_interest,
+      </if>
+      <if test="list[0].buyerCompanyNames!=null">
+        buyer_company_names,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.factorOrderId!=null">
+          #{item.factorOrderId,jdbcType=INTEGER},
+        </if>
+        <if test="item.orderType!=null">
+          #{item.orderType,jdbcType=TINYINT},
+        </if>
+        <if test="item.factorRequisitionId!=null">
+          #{item.factorRequisitionId,jdbcType=INTEGER},
+        </if>
+        <if test="item.orderNumber!=null">
+          #{item.orderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.number!=null">
+          #{item.number,jdbcType=VARCHAR},
+        </if>
+        <if test="item.amount!=null">
+          #{item.amount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.timeLimit!=null">
+          #{item.timeLimit,jdbcType=INTEGER},
+        </if>
+        <if test="item.rate!=null">
+          #{item.rate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.buyerEnterpriseId!=null">
+          #{item.buyerEnterpriseId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerId!=null">
+          #{item.buyerId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerName!=null">
+          #{item.buyerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sellerEnterpriseId!=null">
+          #{item.sellerEnterpriseId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerId!=null">
+          #{item.sellerId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerName!=null">
+          #{item.sellerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.interestTime!=null">
+          #{item.interestTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.endRepaymentTime!=null">
+          #{item.endRepaymentTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.payBankRealNumber!=null">
+          #{item.payBankRealNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payercity!=null">
+          #{item.payercity,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackUsername!=null">
+          #{item.repaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBankNumber!=null">
+          #{item.repaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.estimateRepaymentAmount!=null">
+          #{item.estimateRepaymentAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.estimateBalance!=null">
+          #{item.estimateBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.estimateInterest!=null">
+          #{item.estimateInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityBalance!=null">
+          #{item.realityBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityInterest!=null">
+          #{item.realityInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityNormalInterest!=null">
+          #{item.realityNormalInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityGraceInterest!=null">
+          #{item.realityGraceInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityBreakInterest!=null">
+          #{item.realityBreakInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityCompoundInterest!=null">
+          #{item.realityCompoundInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayInterest!=null">
+          #{item.todayInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayNormalInterest!=null">
+          #{item.todayNormalInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayGraceInterest!=null">
+          #{item.todayGraceInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayBreakInterest!=null">
+          #{item.todayBreakInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayCompoundInterest!=null">
+          #{item.todayCompoundInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.surplusBalance!=null">
+          #{item.surplusBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.status!=null">
+          #{item.status,jdbcType=TINYINT},
+        </if>
+        <if test="item.settleTime!=null">
+          #{item.settleTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isCompensatory!=null">
+          #{item.isCompensatory,jdbcType=BIT},
+        </if>
+        <if test="item.isReduceInterest!=null">
+          #{item.isReduceInterest,jdbcType=BIT},
+        </if>
+        <if test="item.reduceInterestAmount!=null">
+          #{item.reduceInterestAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.buyerCompanyIds!=null">
+          #{item.buyerCompanyIds,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          #{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          #{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isBadDebt!=null">
+          #{item.isBadDebt,jdbcType=BIT},
+        </if>
+        <if test="item.badRealityInterestToBalance!=null">
+          #{item.badRealityInterestToBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badStrikeBalance!=null">
+          #{item.badStrikeBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badBalance!=null">
+          #{item.badBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badInterest!=null">
+          #{item.badInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badStrikeInterest!=null">
+          #{item.badStrikeInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isCompensatoryInterest!=null">
+          #{item.isCompensatoryInterest,jdbcType=BIT},
+        </if>
+        <if test="item.buyerCompanyNames!=null">
+          #{item.buyerCompanyNames,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update factor_bill
+      <set>
+        <if test="item.factorOrderId!=null">
+          factor_order_id=#{item.factorOrderId,jdbcType=INTEGER},
+        </if>
+        <if test="item.orderType!=null">
+          order_type=#{item.orderType,jdbcType=TINYINT},
+        </if>
+        <if test="item.factorRequisitionId!=null">
+          factor_requisition_id=#{item.factorRequisitionId,jdbcType=INTEGER},
+        </if>
+        <if test="item.orderNumber!=null">
+          order_number=#{item.orderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.number!=null">
+          number=#{item.number,jdbcType=VARCHAR},
+        </if>
+        <if test="item.amount!=null">
+          amount=#{item.amount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.timeLimit!=null">
+          time_limit=#{item.timeLimit,jdbcType=INTEGER},
+        </if>
+        <if test="item.rate!=null">
+          rate=#{item.rate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.buyerEnterpriseId!=null">
+          buyer_enterprise_id=#{item.buyerEnterpriseId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerId!=null">
+          buyer_id=#{item.buyerId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerName!=null">
+          buyer_name=#{item.buyerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.sellerEnterpriseId!=null">
+          seller_enterprise_id=#{item.sellerEnterpriseId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerId!=null">
+          seller_id=#{item.sellerId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerName!=null">
+          seller_name=#{item.sellerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.interestTime!=null">
+          interest_time=#{item.interestTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.endRepaymentTime!=null">
+          end_repayment_time=#{item.endRepaymentTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.payBankRealNumber!=null">
+          pay_bank_real_number=#{item.payBankRealNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payercity!=null">
+          payerCity=#{item.payercity,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackUsername!=null">
+          repayment_back_username=#{item.repaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBankNumber!=null">
+          repayment_bank_number=#{item.repaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.estimateRepaymentAmount!=null">
+          estimate_repayment_amount=#{item.estimateRepaymentAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.estimateBalance!=null">
+          estimate_balance=#{item.estimateBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.estimateInterest!=null">
+          estimate_interest=#{item.estimateInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityBalance!=null">
+          reality_balance=#{item.realityBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityInterest!=null">
+          reality_interest=#{item.realityInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityNormalInterest!=null">
+          reality_normal_interest=#{item.realityNormalInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityGraceInterest!=null">
+          reality_grace_interest=#{item.realityGraceInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityBreakInterest!=null">
+          reality_break_interest=#{item.realityBreakInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.realityCompoundInterest!=null">
+          reality_compound_interest=#{item.realityCompoundInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayInterest!=null">
+          today_interest=#{item.todayInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayNormalInterest!=null">
+          today_normal_interest=#{item.todayNormalInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayGraceInterest!=null">
+          today_grace_interest=#{item.todayGraceInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayBreakInterest!=null">
+          today_break_interest=#{item.todayBreakInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.todayCompoundInterest!=null">
+          today_compound_interest=#{item.todayCompoundInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.surplusBalance!=null">
+          surplus_balance=#{item.surplusBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.status!=null">
+          status=#{item.status,jdbcType=TINYINT},
+        </if>
+        <if test="item.settleTime!=null">
+          settle_time=#{item.settleTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isCompensatory!=null">
+          is_compensatory=#{item.isCompensatory,jdbcType=BIT},
+        </if>
+        <if test="item.isReduceInterest!=null">
+          is_reduce_interest=#{item.isReduceInterest,jdbcType=BIT},
+        </if>
+        <if test="item.reduceInterestAmount!=null">
+          reduce_interest_amount=#{item.reduceInterestAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.buyerCompanyIds!=null">
+          buyer_company_ids=#{item.buyerCompanyIds,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          create_time=#{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          update_time=#{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isBadDebt!=null">
+          is_bad_debt=#{item.isBadDebt,jdbcType=BIT},
+        </if>
+        <if test="item.badRealityInterestToBalance!=null">
+          bad_reality_interest_to_balance=#{item.badRealityInterestToBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badStrikeBalance!=null">
+          bad_strike_balance=#{item.badStrikeBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badBalance!=null">
+          bad_balance=#{item.badBalance,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badInterest!=null">
+          bad_interest=#{item.badInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.badStrikeInterest!=null">
+          bad_strike_interest=#{item.badStrikeInterest,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isCompensatoryInterest!=null">
+          is_compensatory_interest=#{item.isCompensatoryInterest,jdbcType=BIT},
+        </if>
+        <if test="item.buyerCompanyNames!=null">
+          buyer_company_names=#{item.buyerCompanyNames,jdbcType=LONGVARCHAR},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=INTEGER}
+      factor_order_id = #{item.factorOrderId,jdbcType=INTEGER}
+    </foreach>
+  </update>
+</mapper>

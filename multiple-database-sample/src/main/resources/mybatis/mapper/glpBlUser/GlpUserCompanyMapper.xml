@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.data.warehouse.dao.glp.bluser.GlpUserCompanyMapper">
+  <resultMap id="BaseResultMap" type="com.glp.data.warehouse.entity.glp.bluser.GlpUserCompany">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="legalrep" jdbcType="VARCHAR" property="legalrep" />
+    <result column="legalidcard" jdbcType="VARCHAR" property="legalidcard" />
+    <result column="legal_bank_name" jdbcType="VARCHAR" property="legalBankName" />
+    <result column="legal_bank_account" jdbcType="VARCHAR" property="legalBankAccount" />
+    <result column="uniform_social_credit_code" jdbcType="VARCHAR" property="uniformSocialCreditCode" />
+    <result column="capital" jdbcType="VARCHAR" property="capital" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="found_time" jdbcType="VARCHAR" property="foundTime" />
+    <result column="yyqxq" jdbcType="VARCHAR" property="yyqxq" />
+    <result column="yyqxz" jdbcType="VARCHAR" property="yyqxz" />
+    <result column="regplace" jdbcType="VARCHAR" property="regplace" />
+    <result column="company_contact_name" jdbcType="VARCHAR" property="companyContactName" />
+    <result column="company_contact_mobile" jdbcType="VARCHAR" property="companyContactMobile" />
+    <result column="company_contact_email" jdbcType="VARCHAR" property="companyContactEmail" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="yyzzimg" jdbcType="VARCHAR" property="yyzzimg" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="tax_certificate" jdbcType="VARCHAR" property="taxCertificate" />
+    <result column="invoice_address_phone" jdbcType="VARCHAR" property="invoiceAddressPhone" />
+    <result column="invoice_bank_account" jdbcType="VARCHAR" property="invoiceBankAccount" />
+    <result column="tax_type" jdbcType="VARCHAR" property="taxType" />
+    <result column="invoice_header" jdbcType="VARCHAR" property="invoiceHeader" />
+    <result column="contact_address" jdbcType="VARCHAR" property="contactAddress" />
+    <result column="plat_bp_code" jdbcType="VARCHAR" property="platBpCode" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="division" jdbcType="INTEGER" property="division" />
+    <result column="vender_bp_code" jdbcType="VARCHAR" property="venderBpCode" />
+    <result column="payer_flag" jdbcType="TINYINT" property="payerFlag" />
+    <result column="finance_type" jdbcType="VARCHAR" property="financeType" />
+    <result column="passport" jdbcType="VARCHAR" property="passport" />
+    <result column="passport_img" jdbcType="VARCHAR" property="passportImg" />
+    <result column="legalrep_id_card_front" jdbcType="VARCHAR" property="legalrepIdCardFront" />
+    <result column="legalrep_id_card_reverse" jdbcType="VARCHAR" property="legalrepIdCardReverse" />
+    <result column="tax_registration_img" jdbcType="VARCHAR" property="taxRegistrationImg" />
+    <result column="organization_certificate_img" jdbcType="VARCHAR" property="organizationCertificateImg" />
+    <result column="business_license_number" jdbcType="VARCHAR" property="businessLicenseNumber" />
+    <result column="license_type" jdbcType="BIT" property="licenseType" />
+    <result column="certificate_type" jdbcType="BIT" property="certificateType" />
+    <result column="actual_controller_name" jdbcType="VARCHAR" property="actualControllerName" />
+    <result column="actual_controller_id_type" jdbcType="BIT" property="actualControllerIdType" />
+    <result column="actual_controller_id_no" jdbcType="VARCHAR" property="actualControllerIdNo" />
+    <result column="is_real_name" jdbcType="BIT" property="isRealName" />
+    <result column="audit_status" jdbcType="BIT" property="auditStatus" />
+    <result column="source_type" jdbcType="BIT" property="sourceType" />
+    <result column="source_id" jdbcType="INTEGER" property="sourceId" />
+    <result column="customer_company_code" jdbcType="VARCHAR" property="customerCompanyCode" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="is_unified" jdbcType="BIT" property="isUnified" />
+    <result column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="review_status" jdbcType="BIT" property="reviewStatus" />
+    <result column="apply_id" jdbcType="INTEGER" property="applyId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.glp.data.warehouse.entity.glp.bluser.GlpUserCompanyWithBLOBs">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="scope" jdbcType="LONGVARCHAR" property="scope" />
+    <result column="microtime" jdbcType="LONGVARCHAR" property="microtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, uid, name, type, legalrep, legalidcard, legal_bank_name, legal_bank_account, 
+    uniform_social_credit_code, capital, address, found_time, yyqxq, yyqxz, regplace, 
+    company_contact_name, company_contact_mobile, company_contact_email, status, email, 
+    mobile, yyzzimg, organization_code, tax_certificate, invoice_address_phone, invoice_bank_account, 
+    tax_type, invoice_header, contact_address, plat_bp_code, employee_id, division, vender_bp_code, 
+    payer_flag, finance_type, passport, passport_img, legalrep_id_card_front, legalrep_id_card_reverse, 
+    tax_registration_img, organization_certificate_img, business_license_number, license_type, 
+    certificate_type, actual_controller_name, actual_controller_id_type, actual_controller_id_no, 
+    is_real_name, audit_status, source_type, source_id, customer_company_code, code, 
+    create_time, update_time, is_unified, account_id, review_status, apply_id
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    scope, microtime
+  </sql>
+  <select id="selectByPrimaryKeyWithBLOBs" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from glp_user_company
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.risk.businessdata.dao.dev.gms.PledgeFloatingApplyInfoMapper">
+  <resultMap id="BaseResultMap" type="com.glp.risk.businessdata.entity.dev.gms.PledgeFloatingApplyInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="total_credit_amount" jdbcType="DECIMAL" property="totalCreditAmount" />
+    <result column="total_credit_amount_update_time" jdbcType="TIMESTAMP" property="totalCreditAmountUpdateTime" />
+    <result column="total_pledge_amount" jdbcType="DECIMAL" property="totalPledgeAmount" />
+    <result column="total_pledge_amount_update_time" jdbcType="TIMESTAMP" property="totalPledgeAmountUpdateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, apply_no, total_credit_amount, total_credit_amount_update_time, total_pledge_amount, 
+    total_pledge_amount_update_time, create_time, create_user, update_time, update_user
+  </sql>
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.data.warehouse.dao.glp.factor.FactorBillMapper">
+  <resultMap id="BaseResultMap" type="com.glp.data.warehouse.entity.glp.factor.FactorBill">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="factor_order_id" jdbcType="INTEGER" property="factorOrderId" />
+    <result column="order_type" jdbcType="TINYINT" property="orderType" />
+    <result column="factor_requisition_id" jdbcType="INTEGER" property="factorRequisitionId" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="time_limit" jdbcType="INTEGER" property="timeLimit" />
+    <result column="rate" jdbcType="DECIMAL" property="rate" />
+    <result column="buyer_enterprise_id" jdbcType="INTEGER" property="buyerEnterpriseId" />
+    <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+    <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
+    <result column="seller_enterprise_id" jdbcType="INTEGER" property="sellerEnterpriseId" />
+    <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+    <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+    <result column="interest_time" jdbcType="INTEGER" property="interestTime" />
+    <result column="end_repayment_time" jdbcType="INTEGER" property="endRepaymentTime" />
+    <result column="pay_bank_real_number" jdbcType="VARCHAR" property="payBankRealNumber" />
+    <result column="payerCity" jdbcType="VARCHAR" property="payercity" />
+    <result column="repayment_back_username" jdbcType="VARCHAR" property="repaymentBackUsername" />
+    <result column="repayment_bank_number" jdbcType="VARCHAR" property="repaymentBankNumber" />
+    <result column="estimate_repayment_amount" jdbcType="DECIMAL" property="estimateRepaymentAmount" />
+    <result column="estimate_balance" jdbcType="DECIMAL" property="estimateBalance" />
+    <result column="estimate_interest" jdbcType="DECIMAL" property="estimateInterest" />
+    <result column="reality_balance" jdbcType="DECIMAL" property="realityBalance" />
+    <result column="reality_interest" jdbcType="DECIMAL" property="realityInterest" />
+    <result column="reality_normal_interest" jdbcType="DECIMAL" property="realityNormalInterest" />
+    <result column="reality_grace_interest" jdbcType="DECIMAL" property="realityGraceInterest" />
+    <result column="reality_break_interest" jdbcType="DECIMAL" property="realityBreakInterest" />
+    <result column="reality_compound_interest" jdbcType="DECIMAL" property="realityCompoundInterest" />
+    <result column="today_interest" jdbcType="DECIMAL" property="todayInterest" />
+    <result column="today_normal_interest" jdbcType="DECIMAL" property="todayNormalInterest" />
+    <result column="today_grace_interest" jdbcType="DECIMAL" property="todayGraceInterest" />
+    <result column="today_break_interest" jdbcType="DECIMAL" property="todayBreakInterest" />
+    <result column="today_compound_interest" jdbcType="DECIMAL" property="todayCompoundInterest" />
+    <result column="surplus_balance" jdbcType="DECIMAL" property="surplusBalance" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="settle_time" jdbcType="INTEGER" property="settleTime" />
+    <result column="is_compensatory" jdbcType="BIT" property="isCompensatory" />
+    <result column="is_reduce_interest" jdbcType="BIT" property="isReduceInterest" />
+    <result column="reduce_interest_amount" jdbcType="DECIMAL" property="reduceInterestAmount" />
+    <result column="buyer_company_ids" jdbcType="VARCHAR" property="buyerCompanyIds" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="is_bad_debt" jdbcType="BIT" property="isBadDebt" />
+    <result column="bad_reality_interest_to_balance" jdbcType="DECIMAL" property="badRealityInterestToBalance" />
+    <result column="bad_strike_balance" jdbcType="DECIMAL" property="badStrikeBalance" />
+    <result column="bad_balance" jdbcType="DECIMAL" property="badBalance" />
+    <result column="bad_interest" jdbcType="DECIMAL" property="badInterest" />
+    <result column="bad_strike_interest" jdbcType="DECIMAL" property="badStrikeInterest" />
+    <result column="is_compensatory_interest" jdbcType="BIT" property="isCompensatoryInterest" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.glp.data.warehouse.entity.glp.factor.FactorBill">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="buyer_company_names" jdbcType="LONGVARCHAR" property="buyerCompanyNames" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, factor_order_id, order_type, factor_requisition_id, order_number, number, amount, 
+    time_limit, rate, buyer_enterprise_id, buyer_id, buyer_name, seller_enterprise_id, 
+    seller_id, seller_name, interest_time, end_repayment_time, pay_bank_real_number, 
+    payerCity, repayment_back_username, repayment_bank_number, estimate_repayment_amount, 
+    estimate_balance, estimate_interest, reality_balance, reality_interest, reality_normal_interest, 
+    reality_grace_interest, reality_break_interest, reality_compound_interest, today_interest, 
+    today_normal_interest, today_grace_interest, today_break_interest, today_compound_interest, 
+    surplus_balance, status, settle_time, is_compensatory, is_reduce_interest, reduce_interest_amount, 
+    buyer_company_ids, create_time, update_time, is_bad_debt, bad_reality_interest_to_balance, 
+    bad_strike_balance, bad_balance, bad_interest, bad_strike_interest, is_compensatory_interest
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    buyer_company_names
+  </sql>
+</mapper>

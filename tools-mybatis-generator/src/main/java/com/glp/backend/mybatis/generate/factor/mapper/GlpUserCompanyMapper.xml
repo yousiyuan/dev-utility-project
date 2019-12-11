@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.backend.mybatis.generate.factor.dao.GlpUserCompanyMapper">
+  <resultMap id="BaseResultMap" type="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompany">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="legalrep" jdbcType="VARCHAR" property="legalrep" />
+    <result column="legalidcard" jdbcType="VARCHAR" property="legalidcard" />
+    <result column="legal_bank_name" jdbcType="VARCHAR" property="legalBankName" />
+    <result column="legal_bank_account" jdbcType="VARCHAR" property="legalBankAccount" />
+    <result column="uniform_social_credit_code" jdbcType="VARCHAR" property="uniformSocialCreditCode" />
+    <result column="capital" jdbcType="VARCHAR" property="capital" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="found_time" jdbcType="VARCHAR" property="foundTime" />
+    <result column="yyqxq" jdbcType="VARCHAR" property="yyqxq" />
+    <result column="yyqxz" jdbcType="VARCHAR" property="yyqxz" />
+    <result column="regplace" jdbcType="VARCHAR" property="regplace" />
+    <result column="company_contact_name" jdbcType="VARCHAR" property="companyContactName" />
+    <result column="company_contact_mobile" jdbcType="VARCHAR" property="companyContactMobile" />
+    <result column="company_contact_email" jdbcType="VARCHAR" property="companyContactEmail" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="yyzzimg" jdbcType="VARCHAR" property="yyzzimg" />
+    <result column="organization_code" jdbcType="VARCHAR" property="organizationCode" />
+    <result column="tax_certificate" jdbcType="VARCHAR" property="taxCertificate" />
+    <result column="invoice_address_phone" jdbcType="VARCHAR" property="invoiceAddressPhone" />
+    <result column="invoice_bank_account" jdbcType="VARCHAR" property="invoiceBankAccount" />
+    <result column="tax_type" jdbcType="VARCHAR" property="taxType" />
+    <result column="invoice_header" jdbcType="VARCHAR" property="invoiceHeader" />
+    <result column="contact_address" jdbcType="VARCHAR" property="contactAddress" />
+    <result column="plat_bp_code" jdbcType="VARCHAR" property="platBpCode" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="division" jdbcType="INTEGER" property="division" />
+    <result column="vender_bp_code" jdbcType="VARCHAR" property="venderBpCode" />
+    <result column="payer_flag" jdbcType="TINYINT" property="payerFlag" />
+    <result column="finance_type" jdbcType="VARCHAR" property="financeType" />
+    <result column="passport" jdbcType="VARCHAR" property="passport" />
+    <result column="passport_img" jdbcType="VARCHAR" property="passportImg" />
+    <result column="legalrep_id_card_front" jdbcType="VARCHAR" property="legalrepIdCardFront" />
+    <result column="legalrep_id_card_reverse" jdbcType="VARCHAR" property="legalrepIdCardReverse" />
+    <result column="tax_registration_img" jdbcType="VARCHAR" property="taxRegistrationImg" />
+    <result column="organization_certificate_img" jdbcType="VARCHAR" property="organizationCertificateImg" />
+    <result column="business_license_number" jdbcType="VARCHAR" property="businessLicenseNumber" />
+    <result column="license_type" jdbcType="BIT" property="licenseType" />
+    <result column="certificate_type" jdbcType="BIT" property="certificateType" />
+    <result column="actual_controller_name" jdbcType="VARCHAR" property="actualControllerName" />
+    <result column="actual_controller_id_type" jdbcType="BIT" property="actualControllerIdType" />
+    <result column="actual_controller_id_no" jdbcType="VARCHAR" property="actualControllerIdNo" />
+    <result column="is_real_name" jdbcType="BIT" property="isRealName" />
+    <result column="audit_status" jdbcType="BIT" property="auditStatus" />
+    <result column="source_type" jdbcType="BIT" property="sourceType" />
+    <result column="source_id" jdbcType="INTEGER" property="sourceId" />
+    <result column="customer_company_code" jdbcType="VARCHAR" property="customerCompanyCode" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="is_unified" jdbcType="BIT" property="isUnified" />
+    <result column="account_id" jdbcType="INTEGER" property="accountId" />
+    <result column="review_status" jdbcType="BIT" property="reviewStatus" />
+    <result column="apply_id" jdbcType="INTEGER" property="applyId" />
+    <collection column="id" property="glpCompanyBanks" select="getGlpCompanyBanks" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyWithBLOBs">
+    <result column="scope" jdbcType="LONGVARCHAR" property="scope" />
+    <result column="microtime" jdbcType="LONGVARCHAR" property="microtime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, uid, name, type, legalrep, legalidcard, legal_bank_name, legal_bank_account, 
+    uniform_social_credit_code, capital, address, found_time, yyqxq, yyqxz, regplace, 
+    company_contact_name, company_contact_mobile, company_contact_email, status, email, 
+    mobile, yyzzimg, organization_code, tax_certificate, invoice_address_phone, invoice_bank_account, 
+    tax_type, invoice_header, contact_address, plat_bp_code, employee_id, division, vender_bp_code, 
+    payer_flag, finance_type, passport, passport_img, legalrep_id_card_front, legalrep_id_card_reverse, 
+    tax_registration_img, organization_certificate_img, business_license_number, license_type, 
+    certificate_type, actual_controller_name, actual_controller_id_type, actual_controller_id_no, 
+    is_real_name, audit_status, source_type, source_id, customer_company_code, code, 
+    create_time, update_time, is_unified, account_id, review_status, apply_id
+  </sql>
+  <sql id="Blob_Column_List">
+    scope, microtime
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from glp_user_company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from glp_user_company
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from glp_user_company
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from glp_user_company
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyWithBLOBs">
+    insert into glp_user_company (id, uid, name, 
+      type, legalrep, legalidcard, 
+      legal_bank_name, legal_bank_account, uniform_social_credit_code, 
+      capital, address, found_time, 
+      yyqxq, yyqxz, regplace, 
+      company_contact_name, company_contact_mobile, 
+      company_contact_email, status, email, 
+      mobile, yyzzimg, organization_code, 
+      tax_certificate, invoice_address_phone, invoice_bank_account, 
+      tax_type, invoice_header, contact_address, 
+      plat_bp_code, employee_id, division, 
+      vender_bp_code, payer_flag, finance_type, 
+      passport, passport_img, legalrep_id_card_front, 
+      legalrep_id_card_reverse, tax_registration_img, 
+      organization_certificate_img, business_license_number, 
+      license_type, certificate_type, actual_controller_name, 
+      actual_controller_id_type, actual_controller_id_no, 
+      is_real_name, audit_status, source_type, 
+      source_id, customer_company_code, code, 
+      create_time, update_time, is_unified, 
+      account_id, review_status, apply_id, 
+      scope, microtime)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=TINYINT}, #{legalrep,jdbcType=VARCHAR}, #{legalidcard,jdbcType=VARCHAR}, 
+      #{legalBankName,jdbcType=VARCHAR}, #{legalBankAccount,jdbcType=VARCHAR}, #{uniformSocialCreditCode,jdbcType=VARCHAR}, 
+      #{capital,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{foundTime,jdbcType=VARCHAR}, 
+      #{yyqxq,jdbcType=VARCHAR}, #{yyqxz,jdbcType=VARCHAR}, #{regplace,jdbcType=VARCHAR}, 
+      #{companyContactName,jdbcType=VARCHAR}, #{companyContactMobile,jdbcType=VARCHAR}, 
+      #{companyContactEmail,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{yyzzimg,jdbcType=VARCHAR}, #{organizationCode,jdbcType=VARCHAR}, 
+      #{taxCertificate,jdbcType=VARCHAR}, #{invoiceAddressPhone,jdbcType=VARCHAR}, #{invoiceBankAccount,jdbcType=VARCHAR}, 
+      #{taxType,jdbcType=VARCHAR}, #{invoiceHeader,jdbcType=VARCHAR}, #{contactAddress,jdbcType=VARCHAR}, 
+      #{platBpCode,jdbcType=VARCHAR}, #{employeeId,jdbcType=VARCHAR}, #{division,jdbcType=INTEGER}, 
+      #{venderBpCode,jdbcType=VARCHAR}, #{payerFlag,jdbcType=TINYINT}, #{financeType,jdbcType=VARCHAR}, 
+      #{passport,jdbcType=VARCHAR}, #{passportImg,jdbcType=VARCHAR}, #{legalrepIdCardFront,jdbcType=VARCHAR}, 
+      #{legalrepIdCardReverse,jdbcType=VARCHAR}, #{taxRegistrationImg,jdbcType=VARCHAR}, 
+      #{organizationCertificateImg,jdbcType=VARCHAR}, #{businessLicenseNumber,jdbcType=VARCHAR}, 
+      #{licenseType,jdbcType=BIT}, #{certificateType,jdbcType=BIT}, #{actualControllerName,jdbcType=VARCHAR}, 
+      #{actualControllerIdType,jdbcType=BIT}, #{actualControllerIdNo,jdbcType=VARCHAR}, 
+      #{isRealName,jdbcType=BIT}, #{auditStatus,jdbcType=BIT}, #{sourceType,jdbcType=BIT}, 
+      #{sourceId,jdbcType=INTEGER}, #{customerCompanyCode,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, #{isUnified,jdbcType=BIT}, 
+      #{accountId,jdbcType=INTEGER}, #{reviewStatus,jdbcType=BIT}, #{applyId,jdbcType=INTEGER}, 
+      #{scope,jdbcType=LONGVARCHAR}, #{microtime,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyWithBLOBs">
+    insert into glp_user_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="legalrep != null">
+        legalrep,
+      </if>
+      <if test="legalidcard != null">
+        legalidcard,
+      </if>
+      <if test="legalBankName != null">
+        legal_bank_name,
+      </if>
+      <if test="legalBankAccount != null">
+        legal_bank_account,
+      </if>
+      <if test="uniformSocialCreditCode != null">
+        uniform_social_credit_code,
+      </if>
+      <if test="capital != null">
+        capital,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="foundTime != null">
+        found_time,
+      </if>
+      <if test="yyqxq != null">
+        yyqxq,
+      </if>
+      <if test="yyqxz != null">
+        yyqxz,
+      </if>
+      <if test="regplace != null">
+        regplace,
+      </if>
+      <if test="companyContactName != null">
+        company_contact_name,
+      </if>
+      <if test="companyContactMobile != null">
+        company_contact_mobile,
+      </if>
+      <if test="companyContactEmail != null">
+        company_contact_email,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="yyzzimg != null">
+        yyzzimg,
+      </if>
+      <if test="organizationCode != null">
+        organization_code,
+      </if>
+      <if test="taxCertificate != null">
+        tax_certificate,
+      </if>
+      <if test="invoiceAddressPhone != null">
+        invoice_address_phone,
+      </if>
+      <if test="invoiceBankAccount != null">
+        invoice_bank_account,
+      </if>
+      <if test="taxType != null">
+        tax_type,
+      </if>
+      <if test="invoiceHeader != null">
+        invoice_header,
+      </if>
+      <if test="contactAddress != null">
+        contact_address,
+      </if>
+      <if test="platBpCode != null">
+        plat_bp_code,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="division != null">
+        division,
+      </if>
+      <if test="venderBpCode != null">
+        vender_bp_code,
+      </if>
+      <if test="payerFlag != null">
+        payer_flag,
+      </if>
+      <if test="financeType != null">
+        finance_type,
+      </if>
+      <if test="passport != null">
+        passport,
+      </if>
+      <if test="passportImg != null">
+        passport_img,
+      </if>
+      <if test="legalrepIdCardFront != null">
+        legalrep_id_card_front,
+      </if>
+      <if test="legalrepIdCardReverse != null">
+        legalrep_id_card_reverse,
+      </if>
+      <if test="taxRegistrationImg != null">
+        tax_registration_img,
+      </if>
+      <if test="organizationCertificateImg != null">
+        organization_certificate_img,
+      </if>
+      <if test="businessLicenseNumber != null">
+        business_license_number,
+      </if>
+      <if test="licenseType != null">
+        license_type,
+      </if>
+      <if test="certificateType != null">
+        certificate_type,
+      </if>
+      <if test="actualControllerName != null">
+        actual_controller_name,
+      </if>
+      <if test="actualControllerIdType != null">
+        actual_controller_id_type,
+      </if>
+      <if test="actualControllerIdNo != null">
+        actual_controller_id_no,
+      </if>
+      <if test="isRealName != null">
+        is_real_name,
+      </if>
+      <if test="auditStatus != null">
+        audit_status,
+      </if>
+      <if test="sourceType != null">
+        source_type,
+      </if>
+      <if test="sourceId != null">
+        source_id,
+      </if>
+      <if test="customerCompanyCode != null">
+        customer_company_code,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isUnified != null">
+        is_unified,
+      </if>
+      <if test="accountId != null">
+        account_id,
+      </if>
+      <if test="reviewStatus != null">
+        review_status,
+      </if>
+      <if test="applyId != null">
+        apply_id,
+      </if>
+      <if test="scope != null">
+        scope,
+      </if>
+      <if test="microtime != null">
+        microtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="legalrep != null">
+        #{legalrep,jdbcType=VARCHAR},
+      </if>
+      <if test="legalidcard != null">
+        #{legalidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalBankName != null">
+        #{legalBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalBankAccount != null">
+        #{legalBankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="uniformSocialCreditCode != null">
+        #{uniformSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        #{capital,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="foundTime != null">
+        #{foundTime,jdbcType=VARCHAR},
+      </if>
+      <if test="yyqxq != null">
+        #{yyqxq,jdbcType=VARCHAR},
+      </if>
+      <if test="yyqxz != null">
+        #{yyqxz,jdbcType=VARCHAR},
+      </if>
+      <if test="regplace != null">
+        #{regplace,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactName != null">
+        #{companyContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactMobile != null">
+        #{companyContactMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactEmail != null">
+        #{companyContactEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="yyzzimg != null">
+        #{yyzzimg,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="taxCertificate != null">
+        #{taxCertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceAddressPhone != null">
+        #{invoiceAddressPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceBankAccount != null">
+        #{invoiceBankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="taxType != null">
+        #{taxType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceHeader != null">
+        #{invoiceHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="contactAddress != null">
+        #{contactAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="platBpCode != null">
+        #{platBpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="division != null">
+        #{division,jdbcType=INTEGER},
+      </if>
+      <if test="venderBpCode != null">
+        #{venderBpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payerFlag != null">
+        #{payerFlag,jdbcType=TINYINT},
+      </if>
+      <if test="financeType != null">
+        #{financeType,jdbcType=VARCHAR},
+      </if>
+      <if test="passport != null">
+        #{passport,jdbcType=VARCHAR},
+      </if>
+      <if test="passportImg != null">
+        #{passportImg,jdbcType=VARCHAR},
+      </if>
+      <if test="legalrepIdCardFront != null">
+        #{legalrepIdCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="legalrepIdCardReverse != null">
+        #{legalrepIdCardReverse,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegistrationImg != null">
+        #{taxRegistrationImg,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCertificateImg != null">
+        #{organizationCertificateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseNumber != null">
+        #{businessLicenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseType != null">
+        #{licenseType,jdbcType=BIT},
+      </if>
+      <if test="certificateType != null">
+        #{certificateType,jdbcType=BIT},
+      </if>
+      <if test="actualControllerName != null">
+        #{actualControllerName,jdbcType=VARCHAR},
+      </if>
+      <if test="actualControllerIdType != null">
+        #{actualControllerIdType,jdbcType=BIT},
+      </if>
+      <if test="actualControllerIdNo != null">
+        #{actualControllerIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isRealName != null">
+        #{isRealName,jdbcType=BIT},
+      </if>
+      <if test="auditStatus != null">
+        #{auditStatus,jdbcType=BIT},
+      </if>
+      <if test="sourceType != null">
+        #{sourceType,jdbcType=BIT},
+      </if>
+      <if test="sourceId != null">
+        #{sourceId,jdbcType=INTEGER},
+      </if>
+      <if test="customerCompanyCode != null">
+        #{customerCompanyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isUnified != null">
+        #{isUnified,jdbcType=BIT},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewStatus != null">
+        #{reviewStatus,jdbcType=BIT},
+      </if>
+      <if test="applyId != null">
+        #{applyId,jdbcType=INTEGER},
+      </if>
+      <if test="scope != null">
+        #{scope,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="microtime != null">
+        #{microtime,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyWithBLOBs">
+    update glp_user_company
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="legalrep != null">
+        legalrep = #{legalrep,jdbcType=VARCHAR},
+      </if>
+      <if test="legalidcard != null">
+        legalidcard = #{legalidcard,jdbcType=VARCHAR},
+      </if>
+      <if test="legalBankName != null">
+        legal_bank_name = #{legalBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="legalBankAccount != null">
+        legal_bank_account = #{legalBankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="uniformSocialCreditCode != null">
+        uniform_social_credit_code = #{uniformSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="capital != null">
+        capital = #{capital,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="foundTime != null">
+        found_time = #{foundTime,jdbcType=VARCHAR},
+      </if>
+      <if test="yyqxq != null">
+        yyqxq = #{yyqxq,jdbcType=VARCHAR},
+      </if>
+      <if test="yyqxz != null">
+        yyqxz = #{yyqxz,jdbcType=VARCHAR},
+      </if>
+      <if test="regplace != null">
+        regplace = #{regplace,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactName != null">
+        company_contact_name = #{companyContactName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactMobile != null">
+        company_contact_mobile = #{companyContactMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="companyContactEmail != null">
+        company_contact_email = #{companyContactEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="yyzzimg != null">
+        yyzzimg = #{yyzzimg,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCode != null">
+        organization_code = #{organizationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="taxCertificate != null">
+        tax_certificate = #{taxCertificate,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceAddressPhone != null">
+        invoice_address_phone = #{invoiceAddressPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceBankAccount != null">
+        invoice_bank_account = #{invoiceBankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="taxType != null">
+        tax_type = #{taxType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceHeader != null">
+        invoice_header = #{invoiceHeader,jdbcType=VARCHAR},
+      </if>
+      <if test="contactAddress != null">
+        contact_address = #{contactAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="platBpCode != null">
+        plat_bp_code = #{platBpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="division != null">
+        division = #{division,jdbcType=INTEGER},
+      </if>
+      <if test="venderBpCode != null">
+        vender_bp_code = #{venderBpCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payerFlag != null">
+        payer_flag = #{payerFlag,jdbcType=TINYINT},
+      </if>
+      <if test="financeType != null">
+        finance_type = #{financeType,jdbcType=VARCHAR},
+      </if>
+      <if test="passport != null">
+        passport = #{passport,jdbcType=VARCHAR},
+      </if>
+      <if test="passportImg != null">
+        passport_img = #{passportImg,jdbcType=VARCHAR},
+      </if>
+      <if test="legalrepIdCardFront != null">
+        legalrep_id_card_front = #{legalrepIdCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="legalrepIdCardReverse != null">
+        legalrep_id_card_reverse = #{legalrepIdCardReverse,jdbcType=VARCHAR},
+      </if>
+      <if test="taxRegistrationImg != null">
+        tax_registration_img = #{taxRegistrationImg,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationCertificateImg != null">
+        organization_certificate_img = #{organizationCertificateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseNumber != null">
+        business_license_number = #{businessLicenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseType != null">
+        license_type = #{licenseType,jdbcType=BIT},
+      </if>
+      <if test="certificateType != null">
+        certificate_type = #{certificateType,jdbcType=BIT},
+      </if>
+      <if test="actualControllerName != null">
+        actual_controller_name = #{actualControllerName,jdbcType=VARCHAR},
+      </if>
+      <if test="actualControllerIdType != null">
+        actual_controller_id_type = #{actualControllerIdType,jdbcType=BIT},
+      </if>
+      <if test="actualControllerIdNo != null">
+        actual_controller_id_no = #{actualControllerIdNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isRealName != null">
+        is_real_name = #{isRealName,jdbcType=BIT},
+      </if>
+      <if test="auditStatus != null">
+        audit_status = #{auditStatus,jdbcType=BIT},
+      </if>
+      <if test="sourceType != null">
+        source_type = #{sourceType,jdbcType=BIT},
+      </if>
+      <if test="sourceId != null">
+        source_id = #{sourceId,jdbcType=INTEGER},
+      </if>
+      <if test="customerCompanyCode != null">
+        customer_company_code = #{customerCompanyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isUnified != null">
+        is_unified = #{isUnified,jdbcType=BIT},
+      </if>
+      <if test="accountId != null">
+        account_id = #{accountId,jdbcType=INTEGER},
+      </if>
+      <if test="reviewStatus != null">
+        review_status = #{reviewStatus,jdbcType=BIT},
+      </if>
+      <if test="applyId != null">
+        apply_id = #{applyId,jdbcType=INTEGER},
+      </if>
+      <if test="scope != null">
+        scope = #{scope,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="microtime != null">
+        microtime = #{microtime,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompanyWithBLOBs">
+    update glp_user_company
+    set uid = #{uid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      legalrep = #{legalrep,jdbcType=VARCHAR},
+      legalidcard = #{legalidcard,jdbcType=VARCHAR},
+      legal_bank_name = #{legalBankName,jdbcType=VARCHAR},
+      legal_bank_account = #{legalBankAccount,jdbcType=VARCHAR},
+      uniform_social_credit_code = #{uniformSocialCreditCode,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      found_time = #{foundTime,jdbcType=VARCHAR},
+      yyqxq = #{yyqxq,jdbcType=VARCHAR},
+      yyqxz = #{yyqxz,jdbcType=VARCHAR},
+      regplace = #{regplace,jdbcType=VARCHAR},
+      company_contact_name = #{companyContactName,jdbcType=VARCHAR},
+      company_contact_mobile = #{companyContactMobile,jdbcType=VARCHAR},
+      company_contact_email = #{companyContactEmail,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      yyzzimg = #{yyzzimg,jdbcType=VARCHAR},
+      organization_code = #{organizationCode,jdbcType=VARCHAR},
+      tax_certificate = #{taxCertificate,jdbcType=VARCHAR},
+      invoice_address_phone = #{invoiceAddressPhone,jdbcType=VARCHAR},
+      invoice_bank_account = #{invoiceBankAccount,jdbcType=VARCHAR},
+      tax_type = #{taxType,jdbcType=VARCHAR},
+      invoice_header = #{invoiceHeader,jdbcType=VARCHAR},
+      contact_address = #{contactAddress,jdbcType=VARCHAR},
+      plat_bp_code = #{platBpCode,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      division = #{division,jdbcType=INTEGER},
+      vender_bp_code = #{venderBpCode,jdbcType=VARCHAR},
+      payer_flag = #{payerFlag,jdbcType=TINYINT},
+      finance_type = #{financeType,jdbcType=VARCHAR},
+      passport = #{passport,jdbcType=VARCHAR},
+      passport_img = #{passportImg,jdbcType=VARCHAR},
+      legalrep_id_card_front = #{legalrepIdCardFront,jdbcType=VARCHAR},
+      legalrep_id_card_reverse = #{legalrepIdCardReverse,jdbcType=VARCHAR},
+      tax_registration_img = #{taxRegistrationImg,jdbcType=VARCHAR},
+      organization_certificate_img = #{organizationCertificateImg,jdbcType=VARCHAR},
+      business_license_number = #{businessLicenseNumber,jdbcType=VARCHAR},
+      license_type = #{licenseType,jdbcType=BIT},
+      certificate_type = #{certificateType,jdbcType=BIT},
+      actual_controller_name = #{actualControllerName,jdbcType=VARCHAR},
+      actual_controller_id_type = #{actualControllerIdType,jdbcType=BIT},
+      actual_controller_id_no = #{actualControllerIdNo,jdbcType=VARCHAR},
+      is_real_name = #{isRealName,jdbcType=BIT},
+      audit_status = #{auditStatus,jdbcType=BIT},
+      source_type = #{sourceType,jdbcType=BIT},
+      source_id = #{sourceId,jdbcType=INTEGER},
+      customer_company_code = #{customerCompanyCode,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_unified = #{isUnified,jdbcType=BIT},
+      account_id = #{accountId,jdbcType=INTEGER},
+      review_status = #{reviewStatus,jdbcType=BIT},
+      apply_id = #{applyId,jdbcType=INTEGER},
+      scope = #{scope,jdbcType=LONGVARCHAR},
+      microtime = #{microtime,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.glp.backend.mybatis.generate.factor.pojo.GlpUserCompany">
+    update glp_user_company
+    set uid = #{uid,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      legalrep = #{legalrep,jdbcType=VARCHAR},
+      legalidcard = #{legalidcard,jdbcType=VARCHAR},
+      legal_bank_name = #{legalBankName,jdbcType=VARCHAR},
+      legal_bank_account = #{legalBankAccount,jdbcType=VARCHAR},
+      uniform_social_credit_code = #{uniformSocialCreditCode,jdbcType=VARCHAR},
+      capital = #{capital,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      found_time = #{foundTime,jdbcType=VARCHAR},
+      yyqxq = #{yyqxq,jdbcType=VARCHAR},
+      yyqxz = #{yyqxz,jdbcType=VARCHAR},
+      regplace = #{regplace,jdbcType=VARCHAR},
+      company_contact_name = #{companyContactName,jdbcType=VARCHAR},
+      company_contact_mobile = #{companyContactMobile,jdbcType=VARCHAR},
+      company_contact_email = #{companyContactEmail,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      yyzzimg = #{yyzzimg,jdbcType=VARCHAR},
+      organization_code = #{organizationCode,jdbcType=VARCHAR},
+      tax_certificate = #{taxCertificate,jdbcType=VARCHAR},
+      invoice_address_phone = #{invoiceAddressPhone,jdbcType=VARCHAR},
+      invoice_bank_account = #{invoiceBankAccount,jdbcType=VARCHAR},
+      tax_type = #{taxType,jdbcType=VARCHAR},
+      invoice_header = #{invoiceHeader,jdbcType=VARCHAR},
+      contact_address = #{contactAddress,jdbcType=VARCHAR},
+      plat_bp_code = #{platBpCode,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      division = #{division,jdbcType=INTEGER},
+      vender_bp_code = #{venderBpCode,jdbcType=VARCHAR},
+      payer_flag = #{payerFlag,jdbcType=TINYINT},
+      finance_type = #{financeType,jdbcType=VARCHAR},
+      passport = #{passport,jdbcType=VARCHAR},
+      passport_img = #{passportImg,jdbcType=VARCHAR},
+      legalrep_id_card_front = #{legalrepIdCardFront,jdbcType=VARCHAR},
+      legalrep_id_card_reverse = #{legalrepIdCardReverse,jdbcType=VARCHAR},
+      tax_registration_img = #{taxRegistrationImg,jdbcType=VARCHAR},
+      organization_certificate_img = #{organizationCertificateImg,jdbcType=VARCHAR},
+      business_license_number = #{businessLicenseNumber,jdbcType=VARCHAR},
+      license_type = #{licenseType,jdbcType=BIT},
+      certificate_type = #{certificateType,jdbcType=BIT},
+      actual_controller_name = #{actualControllerName,jdbcType=VARCHAR},
+      actual_controller_id_type = #{actualControllerIdType,jdbcType=BIT},
+      actual_controller_id_no = #{actualControllerIdNo,jdbcType=VARCHAR},
+      is_real_name = #{isRealName,jdbcType=BIT},
+      audit_status = #{auditStatus,jdbcType=BIT},
+      source_type = #{sourceType,jdbcType=BIT},
+      source_id = #{sourceId,jdbcType=INTEGER},
+      customer_company_code = #{customerCompanyCode,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_unified = #{isUnified,jdbcType=BIT},
+      account_id = #{accountId,jdbcType=INTEGER},
+      review_status = #{reviewStatus,jdbcType=BIT},
+      apply_id = #{applyId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getGlpCompanyBanks" resultMap="com.glp.backend.mybatis.generate.factor.dao.GlpCompanyBankMapper.BaseResultMap">
+    select id,enterprise_id,back_username,back_number,back_name,bankCode,back_filiale,branchNo,provName,provId,cityName,cityId,instance_name,instance_number,instance_bank_extension,wj_loginName,wj_loginType,wj_member_id,wj_account_id,create_time,update_time,type,use_type,status,company_id,source_type,source_id,audit_status,is_supplement,manualpullWater_queueId from glp_company_bank where enterprise_id=#{id} 
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into glp_user_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].uid!=null">
+        uid,
+      </if>
+      <if test="list[0].name!=null">
+        name,
+      </if>
+      <if test="list[0].type!=null">
+        type,
+      </if>
+      <if test="list[0].legalrep!=null">
+        legalrep,
+      </if>
+      <if test="list[0].legalidcard!=null">
+        legalidcard,
+      </if>
+      <if test="list[0].legalBankName!=null">
+        legal_bank_name,
+      </if>
+      <if test="list[0].legalBankAccount!=null">
+        legal_bank_account,
+      </if>
+      <if test="list[0].uniformSocialCreditCode!=null">
+        uniform_social_credit_code,
+      </if>
+      <if test="list[0].capital!=null">
+        capital,
+      </if>
+      <if test="list[0].address!=null">
+        address,
+      </if>
+      <if test="list[0].foundTime!=null">
+        found_time,
+      </if>
+      <if test="list[0].yyqxq!=null">
+        yyqxq,
+      </if>
+      <if test="list[0].yyqxz!=null">
+        yyqxz,
+      </if>
+      <if test="list[0].regplace!=null">
+        regplace,
+      </if>
+      <if test="list[0].companyContactName!=null">
+        company_contact_name,
+      </if>
+      <if test="list[0].companyContactMobile!=null">
+        company_contact_mobile,
+      </if>
+      <if test="list[0].companyContactEmail!=null">
+        company_contact_email,
+      </if>
+      <if test="list[0].status!=null">
+        status,
+      </if>
+      <if test="list[0].email!=null">
+        email,
+      </if>
+      <if test="list[0].mobile!=null">
+        mobile,
+      </if>
+      <if test="list[0].yyzzimg!=null">
+        yyzzimg,
+      </if>
+      <if test="list[0].organizationCode!=null">
+        organization_code,
+      </if>
+      <if test="list[0].taxCertificate!=null">
+        tax_certificate,
+      </if>
+      <if test="list[0].invoiceAddressPhone!=null">
+        invoice_address_phone,
+      </if>
+      <if test="list[0].invoiceBankAccount!=null">
+        invoice_bank_account,
+      </if>
+      <if test="list[0].taxType!=null">
+        tax_type,
+      </if>
+      <if test="list[0].invoiceHeader!=null">
+        invoice_header,
+      </if>
+      <if test="list[0].contactAddress!=null">
+        contact_address,
+      </if>
+      <if test="list[0].platBpCode!=null">
+        plat_bp_code,
+      </if>
+      <if test="list[0].employeeId!=null">
+        employee_id,
+      </if>
+      <if test="list[0].division!=null">
+        division,
+      </if>
+      <if test="list[0].venderBpCode!=null">
+        vender_bp_code,
+      </if>
+      <if test="list[0].payerFlag!=null">
+        payer_flag,
+      </if>
+      <if test="list[0].financeType!=null">
+        finance_type,
+      </if>
+      <if test="list[0].passport!=null">
+        passport,
+      </if>
+      <if test="list[0].passportImg!=null">
+        passport_img,
+      </if>
+      <if test="list[0].legalrepIdCardFront!=null">
+        legalrep_id_card_front,
+      </if>
+      <if test="list[0].legalrepIdCardReverse!=null">
+        legalrep_id_card_reverse,
+      </if>
+      <if test="list[0].taxRegistrationImg!=null">
+        tax_registration_img,
+      </if>
+      <if test="list[0].organizationCertificateImg!=null">
+        organization_certificate_img,
+      </if>
+      <if test="list[0].businessLicenseNumber!=null">
+        business_license_number,
+      </if>
+      <if test="list[0].licenseType!=null">
+        license_type,
+      </if>
+      <if test="list[0].certificateType!=null">
+        certificate_type,
+      </if>
+      <if test="list[0].actualControllerName!=null">
+        actual_controller_name,
+      </if>
+      <if test="list[0].actualControllerIdType!=null">
+        actual_controller_id_type,
+      </if>
+      <if test="list[0].actualControllerIdNo!=null">
+        actual_controller_id_no,
+      </if>
+      <if test="list[0].isRealName!=null">
+        is_real_name,
+      </if>
+      <if test="list[0].auditStatus!=null">
+        audit_status,
+      </if>
+      <if test="list[0].sourceType!=null">
+        source_type,
+      </if>
+      <if test="list[0].sourceId!=null">
+        source_id,
+      </if>
+      <if test="list[0].customerCompanyCode!=null">
+        customer_company_code,
+      </if>
+      <if test="list[0].code!=null">
+        code,
+      </if>
+      <if test="list[0].createTime!=null">
+        create_time,
+      </if>
+      <if test="list[0].updateTime!=null">
+        update_time,
+      </if>
+      <if test="list[0].isUnified!=null">
+        is_unified,
+      </if>
+      <if test="list[0].accountId!=null">
+        account_id,
+      </if>
+      <if test="list[0].reviewStatus!=null">
+        review_status,
+      </if>
+      <if test="list[0].applyId!=null">
+        apply_id,
+      </if>
+      <if test="list[0].scope!=null">
+        scope,
+      </if>
+      <if test="list[0].microtime!=null">
+        microtime,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.uid!=null">
+          #{item.uid,jdbcType=INTEGER},
+        </if>
+        <if test="item.name!=null">
+          #{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.type!=null">
+          #{item.type,jdbcType=TINYINT},
+        </if>
+        <if test="item.legalrep!=null">
+          #{item.legalrep,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalidcard!=null">
+          #{item.legalidcard,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalBankName!=null">
+          #{item.legalBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalBankAccount!=null">
+          #{item.legalBankAccount,jdbcType=VARCHAR},
+        </if>
+        <if test="item.uniformSocialCreditCode!=null">
+          #{item.uniformSocialCreditCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.capital!=null">
+          #{item.capital,jdbcType=VARCHAR},
+        </if>
+        <if test="item.address!=null">
+          #{item.address,jdbcType=VARCHAR},
+        </if>
+        <if test="item.foundTime!=null">
+          #{item.foundTime,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyqxq!=null">
+          #{item.yyqxq,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyqxz!=null">
+          #{item.yyqxz,jdbcType=VARCHAR},
+        </if>
+        <if test="item.regplace!=null">
+          #{item.regplace,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactName!=null">
+          #{item.companyContactName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactMobile!=null">
+          #{item.companyContactMobile,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactEmail!=null">
+          #{item.companyContactEmail,jdbcType=VARCHAR},
+        </if>
+        <if test="item.status!=null">
+          #{item.status,jdbcType=VARCHAR},
+        </if>
+        <if test="item.email!=null">
+          #{item.email,jdbcType=VARCHAR},
+        </if>
+        <if test="item.mobile!=null">
+          #{item.mobile,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyzzimg!=null">
+          #{item.yyzzimg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.organizationCode!=null">
+          #{item.organizationCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxCertificate!=null">
+          #{item.taxCertificate,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceAddressPhone!=null">
+          #{item.invoiceAddressPhone,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceBankAccount!=null">
+          #{item.invoiceBankAccount,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxType!=null">
+          #{item.taxType,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceHeader!=null">
+          #{item.invoiceHeader,jdbcType=VARCHAR},
+        </if>
+        <if test="item.contactAddress!=null">
+          #{item.contactAddress,jdbcType=VARCHAR},
+        </if>
+        <if test="item.platBpCode!=null">
+          #{item.platBpCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.employeeId!=null">
+          #{item.employeeId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.division!=null">
+          #{item.division,jdbcType=INTEGER},
+        </if>
+        <if test="item.venderBpCode!=null">
+          #{item.venderBpCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payerFlag!=null">
+          #{item.payerFlag,jdbcType=TINYINT},
+        </if>
+        <if test="item.financeType!=null">
+          #{item.financeType,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passport!=null">
+          #{item.passport,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passportImg!=null">
+          #{item.passportImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalrepIdCardFront!=null">
+          #{item.legalrepIdCardFront,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalrepIdCardReverse!=null">
+          #{item.legalrepIdCardReverse,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxRegistrationImg!=null">
+          #{item.taxRegistrationImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.organizationCertificateImg!=null">
+          #{item.organizationCertificateImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.businessLicenseNumber!=null">
+          #{item.businessLicenseNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.licenseType!=null">
+          #{item.licenseType,jdbcType=BIT},
+        </if>
+        <if test="item.certificateType!=null">
+          #{item.certificateType,jdbcType=BIT},
+        </if>
+        <if test="item.actualControllerName!=null">
+          #{item.actualControllerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.actualControllerIdType!=null">
+          #{item.actualControllerIdType,jdbcType=BIT},
+        </if>
+        <if test="item.actualControllerIdNo!=null">
+          #{item.actualControllerIdNo,jdbcType=VARCHAR},
+        </if>
+        <if test="item.isRealName!=null">
+          #{item.isRealName,jdbcType=BIT},
+        </if>
+        <if test="item.auditStatus!=null">
+          #{item.auditStatus,jdbcType=BIT},
+        </if>
+        <if test="item.sourceType!=null">
+          #{item.sourceType,jdbcType=BIT},
+        </if>
+        <if test="item.sourceId!=null">
+          #{item.sourceId,jdbcType=INTEGER},
+        </if>
+        <if test="item.customerCompanyCode!=null">
+          #{item.customerCompanyCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.code!=null">
+          #{item.code,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          #{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          #{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isUnified!=null">
+          #{item.isUnified,jdbcType=BIT},
+        </if>
+        <if test="item.accountId!=null">
+          #{item.accountId,jdbcType=INTEGER},
+        </if>
+        <if test="item.reviewStatus!=null">
+          #{item.reviewStatus,jdbcType=BIT},
+        </if>
+        <if test="item.applyId!=null">
+          #{item.applyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.scope!=null">
+          #{item.scope,jdbcType=LONGVARCHAR},
+        </if>
+        <if test="item.microtime!=null">
+          #{item.microtime,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update glp_user_company
+      <set>
+        <if test="item.uid!=null">
+          uid=#{item.uid,jdbcType=INTEGER},
+        </if>
+        <if test="item.name!=null">
+          name=#{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.type!=null">
+          type=#{item.type,jdbcType=TINYINT},
+        </if>
+        <if test="item.legalrep!=null">
+          legalrep=#{item.legalrep,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalidcard!=null">
+          legalidcard=#{item.legalidcard,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalBankName!=null">
+          legal_bank_name=#{item.legalBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalBankAccount!=null">
+          legal_bank_account=#{item.legalBankAccount,jdbcType=VARCHAR},
+        </if>
+        <if test="item.uniformSocialCreditCode!=null">
+          uniform_social_credit_code=#{item.uniformSocialCreditCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.capital!=null">
+          capital=#{item.capital,jdbcType=VARCHAR},
+        </if>
+        <if test="item.address!=null">
+          address=#{item.address,jdbcType=VARCHAR},
+        </if>
+        <if test="item.foundTime!=null">
+          found_time=#{item.foundTime,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyqxq!=null">
+          yyqxq=#{item.yyqxq,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyqxz!=null">
+          yyqxz=#{item.yyqxz,jdbcType=VARCHAR},
+        </if>
+        <if test="item.regplace!=null">
+          regplace=#{item.regplace,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactName!=null">
+          company_contact_name=#{item.companyContactName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactMobile!=null">
+          company_contact_mobile=#{item.companyContactMobile,jdbcType=VARCHAR},
+        </if>
+        <if test="item.companyContactEmail!=null">
+          company_contact_email=#{item.companyContactEmail,jdbcType=VARCHAR},
+        </if>
+        <if test="item.status!=null">
+          status=#{item.status,jdbcType=VARCHAR},
+        </if>
+        <if test="item.email!=null">
+          email=#{item.email,jdbcType=VARCHAR},
+        </if>
+        <if test="item.mobile!=null">
+          mobile=#{item.mobile,jdbcType=VARCHAR},
+        </if>
+        <if test="item.yyzzimg!=null">
+          yyzzimg=#{item.yyzzimg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.organizationCode!=null">
+          organization_code=#{item.organizationCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxCertificate!=null">
+          tax_certificate=#{item.taxCertificate,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceAddressPhone!=null">
+          invoice_address_phone=#{item.invoiceAddressPhone,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceBankAccount!=null">
+          invoice_bank_account=#{item.invoiceBankAccount,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxType!=null">
+          tax_type=#{item.taxType,jdbcType=VARCHAR},
+        </if>
+        <if test="item.invoiceHeader!=null">
+          invoice_header=#{item.invoiceHeader,jdbcType=VARCHAR},
+        </if>
+        <if test="item.contactAddress!=null">
+          contact_address=#{item.contactAddress,jdbcType=VARCHAR},
+        </if>
+        <if test="item.platBpCode!=null">
+          plat_bp_code=#{item.platBpCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.employeeId!=null">
+          employee_id=#{item.employeeId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.division!=null">
+          division=#{item.division,jdbcType=INTEGER},
+        </if>
+        <if test="item.venderBpCode!=null">
+          vender_bp_code=#{item.venderBpCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payerFlag!=null">
+          payer_flag=#{item.payerFlag,jdbcType=TINYINT},
+        </if>
+        <if test="item.financeType!=null">
+          finance_type=#{item.financeType,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passport!=null">
+          passport=#{item.passport,jdbcType=VARCHAR},
+        </if>
+        <if test="item.passportImg!=null">
+          passport_img=#{item.passportImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalrepIdCardFront!=null">
+          legalrep_id_card_front=#{item.legalrepIdCardFront,jdbcType=VARCHAR},
+        </if>
+        <if test="item.legalrepIdCardReverse!=null">
+          legalrep_id_card_reverse=#{item.legalrepIdCardReverse,jdbcType=VARCHAR},
+        </if>
+        <if test="item.taxRegistrationImg!=null">
+          tax_registration_img=#{item.taxRegistrationImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.organizationCertificateImg!=null">
+          organization_certificate_img=#{item.organizationCertificateImg,jdbcType=VARCHAR},
+        </if>
+        <if test="item.businessLicenseNumber!=null">
+          business_license_number=#{item.businessLicenseNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.licenseType!=null">
+          license_type=#{item.licenseType,jdbcType=BIT},
+        </if>
+        <if test="item.certificateType!=null">
+          certificate_type=#{item.certificateType,jdbcType=BIT},
+        </if>
+        <if test="item.actualControllerName!=null">
+          actual_controller_name=#{item.actualControllerName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.actualControllerIdType!=null">
+          actual_controller_id_type=#{item.actualControllerIdType,jdbcType=BIT},
+        </if>
+        <if test="item.actualControllerIdNo!=null">
+          actual_controller_id_no=#{item.actualControllerIdNo,jdbcType=VARCHAR},
+        </if>
+        <if test="item.isRealName!=null">
+          is_real_name=#{item.isRealName,jdbcType=BIT},
+        </if>
+        <if test="item.auditStatus!=null">
+          audit_status=#{item.auditStatus,jdbcType=BIT},
+        </if>
+        <if test="item.sourceType!=null">
+          source_type=#{item.sourceType,jdbcType=BIT},
+        </if>
+        <if test="item.sourceId!=null">
+          source_id=#{item.sourceId,jdbcType=INTEGER},
+        </if>
+        <if test="item.customerCompanyCode!=null">
+          customer_company_code=#{item.customerCompanyCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.code!=null">
+          code=#{item.code,jdbcType=VARCHAR},
+        </if>
+        <if test="item.createTime!=null">
+          create_time=#{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          update_time=#{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isUnified!=null">
+          is_unified=#{item.isUnified,jdbcType=BIT},
+        </if>
+        <if test="item.accountId!=null">
+          account_id=#{item.accountId,jdbcType=INTEGER},
+        </if>
+        <if test="item.reviewStatus!=null">
+          review_status=#{item.reviewStatus,jdbcType=BIT},
+        </if>
+        <if test="item.applyId!=null">
+          apply_id=#{item.applyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.scope!=null">
+          scope=#{item.scope,jdbcType=LONGVARCHAR},
+        </if>
+        <if test="item.microtime!=null">
+          microtime=#{item.microtime,jdbcType=LONGVARCHAR},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+</mapper>

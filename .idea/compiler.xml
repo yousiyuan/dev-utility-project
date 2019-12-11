@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="backend-risk-api" />
+        <module name="backend-risk-rule" />
+        <module name="hadoop-database-sample" />
+        <module name="java8-script-engine" />
+        <module name="middleware-kafka-service" />
+        <module name="multiple-database-sample" />
+        <module name="tools-mybatis-generator" />
+        <module name="tools-mybatis-plus" />
+        <module name="tools-mybatis-tk" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tools-mybatis-tk123" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="backend-risk-api" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="backend-risk-rule" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="hadoop-database-sample" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="java8-script-engine" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="middleware-kafka-service" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="multiple-database-sample" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="tools-mybatis-generator" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="tools-mybatis-plus" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="tools-mybatis-tk" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar&quot;" />
+      <module name="tools-mybatis-tk123" options="-verbose -bootclasspath &quot;C:/Program Files/Java/jdk1.8.0_231/jre/lib/rt.jar&quot;" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.glp.backend.mybatis.generate.factor.dao.FactorProductOrderMapper">
+  <resultMap id="BaseResultMap" type="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="product_list_id" jdbcType="INTEGER" property="productListId" />
+    <result column="project_id" jdbcType="INTEGER" property="projectId" />
+    <result column="credit_company_id" jdbcType="INTEGER" property="creditCompanyId" />
+    <result column="source" jdbcType="TINYINT" property="source" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="buyer_organization_id" jdbcType="INTEGER" property="buyerOrganizationId" />
+    <result column="buyer_company_id" jdbcType="INTEGER" property="buyerCompanyId" />
+    <result column="seller_organization_id" jdbcType="INTEGER" property="sellerOrganizationId" />
+    <result column="seller_company_id" jdbcType="INTEGER" property="sellerCompanyId" />
+    <result column="buyer_apply_amount" jdbcType="DECIMAL" property="buyerApplyAmount" />
+    <result column="seller_apply_amount" jdbcType="DECIMAL" property="sellerApplyAmount" />
+    <result column="seller_apply_amount_time" jdbcType="INTEGER" property="sellerApplyAmountTime" />
+    <result column="third_organization_id" jdbcType="INTEGER" property="thirdOrganizationId" />
+    <result column="third_company_id" jdbcType="INTEGER" property="thirdCompanyId" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="product_type_name" jdbcType="VARCHAR" property="productTypeName" />
+    <result column="rate" jdbcType="DECIMAL" property="rate" />
+    <result column="due_time" jdbcType="INTEGER" property="dueTime" />
+    <result column="is_service" jdbcType="TINYINT" property="isService" />
+    <result column="sevice_amount" jdbcType="DECIMAL" property="seviceAmount" />
+    <result column="is_service_verification" jdbcType="TINYINT" property="isServiceVerification" />
+    <result column="service_verification_user_id" jdbcType="INTEGER" property="serviceVerificationUserId" />
+    <result column="service_verification_time" jdbcType="INTEGER" property="serviceVerificationTime" />
+    <result column="repayment_bank_name" jdbcType="VARCHAR" property="repaymentBankName" />
+    <result column="repayment_back_filiale" jdbcType="VARCHAR" property="repaymentBackFiliale" />
+    <result column="repayment_back_username" jdbcType="VARCHAR" property="repaymentBackUsername" />
+    <result column="repayment_bank_number" jdbcType="VARCHAR" property="repaymentBankNumber" />
+    <result column="receipt_bank_name" jdbcType="VARCHAR" property="receiptBankName" />
+    <result column="receipt_bank_code" jdbcType="VARCHAR" property="receiptBankCode" />
+    <result column="receipt_bank_filiale" jdbcType="VARCHAR" property="receiptBankFiliale" />
+    <result column="receipt_bank_filiale_branchNo" jdbcType="VARCHAR" property="receiptBankFilialeBranchno" />
+    <result column="receipt_bank_provName" jdbcType="VARCHAR" property="receiptBankProvname" />
+    <result column="receipt_bank_cityName" jdbcType="VARCHAR" property="receiptBankCityname" />
+    <result column="receipt_bank_username" jdbcType="VARCHAR" property="receiptBankUsername" />
+    <result column="receipt_bank_number" jdbcType="VARCHAR" property="receiptBankNumber" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="pay_bank_name" jdbcType="VARCHAR" property="payBankName" />
+    <result column="pay_bank_filiale" jdbcType="VARCHAR" property="payBankFiliale" />
+    <result column="pay_bank_real_number" jdbcType="VARCHAR" property="payBankRealNumber" />
+    <result column="pay_bank_extension" jdbcType="VARCHAR" property="payBankExtension" />
+    <result column="pay_bank_username" jdbcType="VARCHAR" property="payBankUsername" />
+    <result column="pay_bank_number" jdbcType="VARCHAR" property="payBankNumber" />
+    <result column="pay_order_number" jdbcType="VARCHAR" property="payOrderNumber" />
+    <result column="pay_notes" jdbcType="VARCHAR" property="payNotes" />
+    <result column="pay_status" jdbcType="TINYINT" property="payStatus" />
+    <result column="pledge_number" jdbcType="VARCHAR" property="pledgeNumber" />
+    <result column="estimate_pay_time" jdbcType="INTEGER" property="estimatePayTime" />
+    <result column="pay_success_time" jdbcType="INTEGER" property="paySuccessTime" />
+    <result column="pay_notice_time" jdbcType="INTEGER" property="payNoticeTime" />
+    <result column="callback_url" jdbcType="VARCHAR" property="callbackUrl" />
+    <result column="account_bill_notice_url" jdbcType="VARCHAR" property="accountBillNoticeUrl" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="audit_status" jdbcType="TINYINT" property="auditStatus" />
+    <result column="is_close" jdbcType="TINYINT" property="isClose" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="break_rate" jdbcType="DECIMAL" property="breakRate" />
+    <result column="is_grace_period" jdbcType="BIT" property="isGracePeriod" />
+    <result column="grace_period" jdbcType="INTEGER" property="gracePeriod" />
+    <result column="grace_period_rate" jdbcType="DECIMAL" property="gracePeriodRate" />
+    <result column="compound_rate" jdbcType="DECIMAL" property="compoundRate" />
+    <result column="repeat_repayment_instance_name" jdbcType="VARCHAR" property="repeatRepaymentInstanceName" />
+    <result column="repeat_repayment_instance_number" jdbcType="VARCHAR" property="repeatRepaymentInstanceNumber" />
+    <result column="repeat_repayment_bank_extension" jdbcType="VARCHAR" property="repeatRepaymentBankExtension" />
+    <result column="repeat_repayment_bank_name" jdbcType="VARCHAR" property="repeatRepaymentBankName" />
+    <result column="repeat_repayment_back_filiale" jdbcType="VARCHAR" property="repeatRepaymentBackFiliale" />
+    <result column="repeat_repayment_back_username" jdbcType="VARCHAR" property="repeatRepaymentBackUsername" />
+    <result column="repeat_repayment_bank_number" jdbcType="VARCHAR" property="repeatRepaymentBankNumber" />
+    <result column="payment_method" jdbcType="BIT" property="paymentMethod" />
+    <result column="repayment_time" jdbcType="INTEGER" property="repaymentTime" />
+    <result column="interest_time" jdbcType="INTEGER" property="interestTime" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
+    <result column="trans_seq" jdbcType="VARCHAR" property="transSeq" />
+    <result column="trans_step" jdbcType="CHAR" property="transStep" />
+    <result column="trans_order_seq" jdbcType="INTEGER" property="transOrderSeq" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="apply_amount" jdbcType="DECIMAL" property="applyAmount" />
+    <result column="credit_line_id" jdbcType="INTEGER" property="creditLineId" />
+    <result column="latest_credit_line_id" jdbcType="INTEGER" property="latestCreditLineId" />
+    <result column="credit_description" jdbcType="VARCHAR" property="creditDescription" />
+    <result column="client_number" jdbcType="VARCHAR" property="clientNumber" />
+    <result column="order_status" jdbcType="BIT" property="orderStatus" />
+    <result column="custom_seller_company_id" jdbcType="VARCHAR" property="customSellerCompanyId" />
+    <result column="manual_audit_reason" jdbcType="VARCHAR" property="manualAuditReason" />
+    <result column="buyer_company_ids" jdbcType="VARCHAR" property="buyerCompanyIds" />
+    <result column="contract_sign_url" jdbcType="VARCHAR" property="contractSignUrl" />
+    <result column="pay_bank_ANI" jdbcType="VARCHAR" property="payBankAni" />
+    <result column="fee_rollback_status" jdbcType="BIT" property="feeRollbackStatus" />
+    <result column="fee_rollback_time" jdbcType="INTEGER" property="feeRollbackTime" />
+    <collection column="order_number" property="factorBills" select="getFactorBills" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    <result column="buyer_company_names" jdbcType="LONGVARCHAR" property="buyerCompanyNames" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, product_list_id, project_id, credit_company_id, source, order_number, buyer_organization_id, 
+    buyer_company_id, seller_organization_id, seller_company_id, buyer_apply_amount, 
+    seller_apply_amount, seller_apply_amount_time, third_organization_id, third_company_id, 
+    amount, product_type_name, rate, due_time, is_service, sevice_amount, is_service_verification, 
+    service_verification_user_id, service_verification_time, repayment_bank_name, repayment_back_filiale, 
+    repayment_back_username, repayment_bank_number, receipt_bank_name, receipt_bank_code, 
+    receipt_bank_filiale, receipt_bank_filiale_branchNo, receipt_bank_provName, receipt_bank_cityName, 
+    receipt_bank_username, receipt_bank_number, pay_type, pay_bank_name, pay_bank_filiale, 
+    pay_bank_real_number, pay_bank_extension, pay_bank_username, pay_bank_number, pay_order_number, 
+    pay_notes, pay_status, pledge_number, estimate_pay_time, pay_success_time, pay_notice_time, 
+    callback_url, account_bill_notice_url, status, audit_status, is_close, create_time, 
+    update_time, break_rate, is_grace_period, grace_period, grace_period_rate, compound_rate, 
+    repeat_repayment_instance_name, repeat_repayment_instance_number, repeat_repayment_bank_extension, 
+    repeat_repayment_bank_name, repeat_repayment_back_filiale, repeat_repayment_back_username, 
+    repeat_repayment_bank_number, payment_method, repayment_time, interest_time, transaction_id, 
+    trans_seq, trans_step, trans_order_seq, phone_number, apply_amount, credit_line_id, 
+    latest_credit_line_id, credit_description, client_number, order_status, custom_seller_company_id, 
+    manual_audit_reason, buyer_company_ids, contract_sign_url, pay_bank_ANI, fee_rollback_status, 
+    fee_rollback_time
+  </sql>
+  <sql id="Blob_Column_List">
+    buyer_company_names
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrderExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from factor_product_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from factor_product_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from factor_product_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from factor_product_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    insert into factor_product_order (id, product_list_id, project_id, 
+      credit_company_id, source, order_number, 
+      buyer_organization_id, buyer_company_id, seller_organization_id, 
+      seller_company_id, buyer_apply_amount, seller_apply_amount, 
+      seller_apply_amount_time, third_organization_id, 
+      third_company_id, amount, product_type_name, 
+      rate, due_time, is_service, 
+      sevice_amount, is_service_verification, service_verification_user_id, 
+      service_verification_time, repayment_bank_name, 
+      repayment_back_filiale, repayment_back_username, 
+      repayment_bank_number, receipt_bank_name, receipt_bank_code, 
+      receipt_bank_filiale, receipt_bank_filiale_branchNo, 
+      receipt_bank_provName, receipt_bank_cityName, 
+      receipt_bank_username, receipt_bank_number, 
+      pay_type, pay_bank_name, pay_bank_filiale, 
+      pay_bank_real_number, pay_bank_extension, pay_bank_username, 
+      pay_bank_number, pay_order_number, pay_notes, 
+      pay_status, pledge_number, estimate_pay_time, 
+      pay_success_time, pay_notice_time, callback_url, 
+      account_bill_notice_url, status, audit_status, 
+      is_close, create_time, update_time, 
+      break_rate, is_grace_period, grace_period, 
+      grace_period_rate, compound_rate, repeat_repayment_instance_name, 
+      repeat_repayment_instance_number, repeat_repayment_bank_extension, 
+      repeat_repayment_bank_name, repeat_repayment_back_filiale, 
+      repeat_repayment_back_username, repeat_repayment_bank_number, 
+      payment_method, repayment_time, interest_time, 
+      transaction_id, trans_seq, trans_step, 
+      trans_order_seq, phone_number, apply_amount, 
+      credit_line_id, latest_credit_line_id, credit_description, 
+      client_number, order_status, custom_seller_company_id, 
+      manual_audit_reason, buyer_company_ids, contract_sign_url, 
+      pay_bank_ANI, fee_rollback_status, fee_rollback_time, 
+      buyer_company_names)
+    values (#{id,jdbcType=INTEGER}, #{productListId,jdbcType=INTEGER}, #{projectId,jdbcType=INTEGER}, 
+      #{creditCompanyId,jdbcType=INTEGER}, #{source,jdbcType=TINYINT}, #{orderNumber,jdbcType=VARCHAR}, 
+      #{buyerOrganizationId,jdbcType=INTEGER}, #{buyerCompanyId,jdbcType=INTEGER}, #{sellerOrganizationId,jdbcType=INTEGER}, 
+      #{sellerCompanyId,jdbcType=INTEGER}, #{buyerApplyAmount,jdbcType=DECIMAL}, #{sellerApplyAmount,jdbcType=DECIMAL}, 
+      #{sellerApplyAmountTime,jdbcType=INTEGER}, #{thirdOrganizationId,jdbcType=INTEGER}, 
+      #{thirdCompanyId,jdbcType=INTEGER}, #{amount,jdbcType=DECIMAL}, #{productTypeName,jdbcType=VARCHAR}, 
+      #{rate,jdbcType=DECIMAL}, #{dueTime,jdbcType=INTEGER}, #{isService,jdbcType=TINYINT}, 
+      #{seviceAmount,jdbcType=DECIMAL}, #{isServiceVerification,jdbcType=TINYINT}, #{serviceVerificationUserId,jdbcType=INTEGER}, 
+      #{serviceVerificationTime,jdbcType=INTEGER}, #{repaymentBankName,jdbcType=VARCHAR}, 
+      #{repaymentBackFiliale,jdbcType=VARCHAR}, #{repaymentBackUsername,jdbcType=VARCHAR}, 
+      #{repaymentBankNumber,jdbcType=VARCHAR}, #{receiptBankName,jdbcType=VARCHAR}, #{receiptBankCode,jdbcType=VARCHAR}, 
+      #{receiptBankFiliale,jdbcType=VARCHAR}, #{receiptBankFilialeBranchno,jdbcType=VARCHAR}, 
+      #{receiptBankProvname,jdbcType=VARCHAR}, #{receiptBankCityname,jdbcType=VARCHAR}, 
+      #{receiptBankUsername,jdbcType=VARCHAR}, #{receiptBankNumber,jdbcType=VARCHAR}, 
+      #{payType,jdbcType=TINYINT}, #{payBankName,jdbcType=VARCHAR}, #{payBankFiliale,jdbcType=VARCHAR}, 
+      #{payBankRealNumber,jdbcType=VARCHAR}, #{payBankExtension,jdbcType=VARCHAR}, #{payBankUsername,jdbcType=VARCHAR}, 
+      #{payBankNumber,jdbcType=VARCHAR}, #{payOrderNumber,jdbcType=VARCHAR}, #{payNotes,jdbcType=VARCHAR}, 
+      #{payStatus,jdbcType=TINYINT}, #{pledgeNumber,jdbcType=VARCHAR}, #{estimatePayTime,jdbcType=INTEGER}, 
+      #{paySuccessTime,jdbcType=INTEGER}, #{payNoticeTime,jdbcType=INTEGER}, #{callbackUrl,jdbcType=VARCHAR}, 
+      #{accountBillNoticeUrl,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{auditStatus,jdbcType=TINYINT}, 
+      #{isClose,jdbcType=TINYINT}, #{createTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, 
+      #{breakRate,jdbcType=DECIMAL}, #{isGracePeriod,jdbcType=BIT}, #{gracePeriod,jdbcType=INTEGER}, 
+      #{gracePeriodRate,jdbcType=DECIMAL}, #{compoundRate,jdbcType=DECIMAL}, #{repeatRepaymentInstanceName,jdbcType=VARCHAR}, 
+      #{repeatRepaymentInstanceNumber,jdbcType=VARCHAR}, #{repeatRepaymentBankExtension,jdbcType=VARCHAR}, 
+      #{repeatRepaymentBankName,jdbcType=VARCHAR}, #{repeatRepaymentBackFiliale,jdbcType=VARCHAR}, 
+      #{repeatRepaymentBackUsername,jdbcType=VARCHAR}, #{repeatRepaymentBankNumber,jdbcType=VARCHAR}, 
+      #{paymentMethod,jdbcType=BIT}, #{repaymentTime,jdbcType=INTEGER}, #{interestTime,jdbcType=INTEGER}, 
+      #{transactionId,jdbcType=VARCHAR}, #{transSeq,jdbcType=VARCHAR}, #{transStep,jdbcType=CHAR}, 
+      #{transOrderSeq,jdbcType=INTEGER}, #{phoneNumber,jdbcType=VARCHAR}, #{applyAmount,jdbcType=DECIMAL}, 
+      #{creditLineId,jdbcType=INTEGER}, #{latestCreditLineId,jdbcType=INTEGER}, #{creditDescription,jdbcType=VARCHAR}, 
+      #{clientNumber,jdbcType=VARCHAR}, #{orderStatus,jdbcType=BIT}, #{customSellerCompanyId,jdbcType=VARCHAR}, 
+      #{manualAuditReason,jdbcType=VARCHAR}, #{buyerCompanyIds,jdbcType=VARCHAR}, #{contractSignUrl,jdbcType=VARCHAR}, 
+      #{payBankAni,jdbcType=VARCHAR}, #{feeRollbackStatus,jdbcType=BIT}, #{feeRollbackTime,jdbcType=INTEGER}, 
+      #{buyerCompanyNames,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    insert into factor_product_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="productListId != null">
+        product_list_id,
+      </if>
+      <if test="projectId != null">
+        project_id,
+      </if>
+      <if test="creditCompanyId != null">
+        credit_company_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="buyerOrganizationId != null">
+        buyer_organization_id,
+      </if>
+      <if test="buyerCompanyId != null">
+        buyer_company_id,
+      </if>
+      <if test="sellerOrganizationId != null">
+        seller_organization_id,
+      </if>
+      <if test="sellerCompanyId != null">
+        seller_company_id,
+      </if>
+      <if test="buyerApplyAmount != null">
+        buyer_apply_amount,
+      </if>
+      <if test="sellerApplyAmount != null">
+        seller_apply_amount,
+      </if>
+      <if test="sellerApplyAmountTime != null">
+        seller_apply_amount_time,
+      </if>
+      <if test="thirdOrganizationId != null">
+        third_organization_id,
+      </if>
+      <if test="thirdCompanyId != null">
+        third_company_id,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="productTypeName != null">
+        product_type_name,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+      <if test="dueTime != null">
+        due_time,
+      </if>
+      <if test="isService != null">
+        is_service,
+      </if>
+      <if test="seviceAmount != null">
+        sevice_amount,
+      </if>
+      <if test="isServiceVerification != null">
+        is_service_verification,
+      </if>
+      <if test="serviceVerificationUserId != null">
+        service_verification_user_id,
+      </if>
+      <if test="serviceVerificationTime != null">
+        service_verification_time,
+      </if>
+      <if test="repaymentBankName != null">
+        repayment_bank_name,
+      </if>
+      <if test="repaymentBackFiliale != null">
+        repayment_back_filiale,
+      </if>
+      <if test="repaymentBackUsername != null">
+        repayment_back_username,
+      </if>
+      <if test="repaymentBankNumber != null">
+        repayment_bank_number,
+      </if>
+      <if test="receiptBankName != null">
+        receipt_bank_name,
+      </if>
+      <if test="receiptBankCode != null">
+        receipt_bank_code,
+      </if>
+      <if test="receiptBankFiliale != null">
+        receipt_bank_filiale,
+      </if>
+      <if test="receiptBankFilialeBranchno != null">
+        receipt_bank_filiale_branchNo,
+      </if>
+      <if test="receiptBankProvname != null">
+        receipt_bank_provName,
+      </if>
+      <if test="receiptBankCityname != null">
+        receipt_bank_cityName,
+      </if>
+      <if test="receiptBankUsername != null">
+        receipt_bank_username,
+      </if>
+      <if test="receiptBankNumber != null">
+        receipt_bank_number,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="payBankName != null">
+        pay_bank_name,
+      </if>
+      <if test="payBankFiliale != null">
+        pay_bank_filiale,
+      </if>
+      <if test="payBankRealNumber != null">
+        pay_bank_real_number,
+      </if>
+      <if test="payBankExtension != null">
+        pay_bank_extension,
+      </if>
+      <if test="payBankUsername != null">
+        pay_bank_username,
+      </if>
+      <if test="payBankNumber != null">
+        pay_bank_number,
+      </if>
+      <if test="payOrderNumber != null">
+        pay_order_number,
+      </if>
+      <if test="payNotes != null">
+        pay_notes,
+      </if>
+      <if test="payStatus != null">
+        pay_status,
+      </if>
+      <if test="pledgeNumber != null">
+        pledge_number,
+      </if>
+      <if test="estimatePayTime != null">
+        estimate_pay_time,
+      </if>
+      <if test="paySuccessTime != null">
+        pay_success_time,
+      </if>
+      <if test="payNoticeTime != null">
+        pay_notice_time,
+      </if>
+      <if test="callbackUrl != null">
+        callback_url,
+      </if>
+      <if test="accountBillNoticeUrl != null">
+        account_bill_notice_url,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="auditStatus != null">
+        audit_status,
+      </if>
+      <if test="isClose != null">
+        is_close,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="breakRate != null">
+        break_rate,
+      </if>
+      <if test="isGracePeriod != null">
+        is_grace_period,
+      </if>
+      <if test="gracePeriod != null">
+        grace_period,
+      </if>
+      <if test="gracePeriodRate != null">
+        grace_period_rate,
+      </if>
+      <if test="compoundRate != null">
+        compound_rate,
+      </if>
+      <if test="repeatRepaymentInstanceName != null">
+        repeat_repayment_instance_name,
+      </if>
+      <if test="repeatRepaymentInstanceNumber != null">
+        repeat_repayment_instance_number,
+      </if>
+      <if test="repeatRepaymentBankExtension != null">
+        repeat_repayment_bank_extension,
+      </if>
+      <if test="repeatRepaymentBankName != null">
+        repeat_repayment_bank_name,
+      </if>
+      <if test="repeatRepaymentBackFiliale != null">
+        repeat_repayment_back_filiale,
+      </if>
+      <if test="repeatRepaymentBackUsername != null">
+        repeat_repayment_back_username,
+      </if>
+      <if test="repeatRepaymentBankNumber != null">
+        repeat_repayment_bank_number,
+      </if>
+      <if test="paymentMethod != null">
+        payment_method,
+      </if>
+      <if test="repaymentTime != null">
+        repayment_time,
+      </if>
+      <if test="interestTime != null">
+        interest_time,
+      </if>
+      <if test="transactionId != null">
+        transaction_id,
+      </if>
+      <if test="transSeq != null">
+        trans_seq,
+      </if>
+      <if test="transStep != null">
+        trans_step,
+      </if>
+      <if test="transOrderSeq != null">
+        trans_order_seq,
+      </if>
+      <if test="phoneNumber != null">
+        phone_number,
+      </if>
+      <if test="applyAmount != null">
+        apply_amount,
+      </if>
+      <if test="creditLineId != null">
+        credit_line_id,
+      </if>
+      <if test="latestCreditLineId != null">
+        latest_credit_line_id,
+      </if>
+      <if test="creditDescription != null">
+        credit_description,
+      </if>
+      <if test="clientNumber != null">
+        client_number,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="customSellerCompanyId != null">
+        custom_seller_company_id,
+      </if>
+      <if test="manualAuditReason != null">
+        manual_audit_reason,
+      </if>
+      <if test="buyerCompanyIds != null">
+        buyer_company_ids,
+      </if>
+      <if test="contractSignUrl != null">
+        contract_sign_url,
+      </if>
+      <if test="payBankAni != null">
+        pay_bank_ANI,
+      </if>
+      <if test="feeRollbackStatus != null">
+        fee_rollback_status,
+      </if>
+      <if test="feeRollbackTime != null">
+        fee_rollback_time,
+      </if>
+      <if test="buyerCompanyNames != null">
+        buyer_company_names,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="productListId != null">
+        #{productListId,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="creditCompanyId != null">
+        #{creditCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=TINYINT},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerOrganizationId != null">
+        #{buyerOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerCompanyId != null">
+        #{buyerCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerOrganizationId != null">
+        #{sellerOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerCompanyId != null">
+        #{sellerCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerApplyAmount != null">
+        #{buyerApplyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerApplyAmount != null">
+        #{sellerApplyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerApplyAmountTime != null">
+        #{sellerApplyAmountTime,jdbcType=INTEGER},
+      </if>
+      <if test="thirdOrganizationId != null">
+        #{thirdOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="thirdCompanyId != null">
+        #{thirdCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="productTypeName != null">
+        #{productTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="dueTime != null">
+        #{dueTime,jdbcType=INTEGER},
+      </if>
+      <if test="isService != null">
+        #{isService,jdbcType=TINYINT},
+      </if>
+      <if test="seviceAmount != null">
+        #{seviceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="isServiceVerification != null">
+        #{isServiceVerification,jdbcType=TINYINT},
+      </if>
+      <if test="serviceVerificationUserId != null">
+        #{serviceVerificationUserId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceVerificationTime != null">
+        #{serviceVerificationTime,jdbcType=INTEGER},
+      </if>
+      <if test="repaymentBankName != null">
+        #{repaymentBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackFiliale != null">
+        #{repaymentBackFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackUsername != null">
+        #{repaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBankNumber != null">
+        #{repaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankName != null">
+        #{receiptBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankCode != null">
+        #{receiptBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankFiliale != null">
+        #{receiptBankFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankFilialeBranchno != null">
+        #{receiptBankFilialeBranchno,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankProvname != null">
+        #{receiptBankProvname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankCityname != null">
+        #{receiptBankCityname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankUsername != null">
+        #{receiptBankUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankNumber != null">
+        #{receiptBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="payBankName != null">
+        #{payBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankFiliale != null">
+        #{payBankFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankRealNumber != null">
+        #{payBankRealNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankExtension != null">
+        #{payBankExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankUsername != null">
+        #{payBankUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankNumber != null">
+        #{payBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payOrderNumber != null">
+        #{payOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payNotes != null">
+        #{payNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null">
+        #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="pledgeNumber != null">
+        #{pledgeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="estimatePayTime != null">
+        #{estimatePayTime,jdbcType=INTEGER},
+      </if>
+      <if test="paySuccessTime != null">
+        #{paySuccessTime,jdbcType=INTEGER},
+      </if>
+      <if test="payNoticeTime != null">
+        #{payNoticeTime,jdbcType=INTEGER},
+      </if>
+      <if test="callbackUrl != null">
+        #{callbackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBillNoticeUrl != null">
+        #{accountBillNoticeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="auditStatus != null">
+        #{auditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isClose != null">
+        #{isClose,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="breakRate != null">
+        #{breakRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isGracePeriod != null">
+        #{isGracePeriod,jdbcType=BIT},
+      </if>
+      <if test="gracePeriod != null">
+        #{gracePeriod,jdbcType=INTEGER},
+      </if>
+      <if test="gracePeriodRate != null">
+        #{gracePeriodRate,jdbcType=DECIMAL},
+      </if>
+      <if test="compoundRate != null">
+        #{compoundRate,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatRepaymentInstanceName != null">
+        #{repeatRepaymentInstanceName,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentInstanceNumber != null">
+        #{repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankExtension != null">
+        #{repeatRepaymentBankExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankName != null">
+        #{repeatRepaymentBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBackFiliale != null">
+        #{repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBackUsername != null">
+        #{repeatRepaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankNumber != null">
+        #{repeatRepaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentMethod != null">
+        #{paymentMethod,jdbcType=BIT},
+      </if>
+      <if test="repaymentTime != null">
+        #{repaymentTime,jdbcType=INTEGER},
+      </if>
+      <if test="interestTime != null">
+        #{interestTime,jdbcType=INTEGER},
+      </if>
+      <if test="transactionId != null">
+        #{transactionId,jdbcType=VARCHAR},
+      </if>
+      <if test="transSeq != null">
+        #{transSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="transStep != null">
+        #{transStep,jdbcType=CHAR},
+      </if>
+      <if test="transOrderSeq != null">
+        #{transOrderSeq,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNumber != null">
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="applyAmount != null">
+        #{applyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="creditLineId != null">
+        #{creditLineId,jdbcType=INTEGER},
+      </if>
+      <if test="latestCreditLineId != null">
+        #{latestCreditLineId,jdbcType=INTEGER},
+      </if>
+      <if test="creditDescription != null">
+        #{creditDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNumber != null">
+        #{clientNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=BIT},
+      </if>
+      <if test="customSellerCompanyId != null">
+        #{customSellerCompanyId,jdbcType=VARCHAR},
+      </if>
+      <if test="manualAuditReason != null">
+        #{manualAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerCompanyIds != null">
+        #{buyerCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="contractSignUrl != null">
+        #{contractSignUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankAni != null">
+        #{payBankAni,jdbcType=VARCHAR},
+      </if>
+      <if test="feeRollbackStatus != null">
+        #{feeRollbackStatus,jdbcType=BIT},
+      </if>
+      <if test="feeRollbackTime != null">
+        #{feeRollbackTime,jdbcType=INTEGER},
+      </if>
+      <if test="buyerCompanyNames != null">
+        #{buyerCompanyNames,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    update factor_product_order
+    <set>
+      <if test="productListId != null">
+        product_list_id = #{productListId,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null">
+        project_id = #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="creditCompanyId != null">
+        credit_company_id = #{creditCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=TINYINT},
+      </if>
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerOrganizationId != null">
+        buyer_organization_id = #{buyerOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerCompanyId != null">
+        buyer_company_id = #{buyerCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerOrganizationId != null">
+        seller_organization_id = #{sellerOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="sellerCompanyId != null">
+        seller_company_id = #{sellerCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="buyerApplyAmount != null">
+        buyer_apply_amount = #{buyerApplyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerApplyAmount != null">
+        seller_apply_amount = #{sellerApplyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerApplyAmountTime != null">
+        seller_apply_amount_time = #{sellerApplyAmountTime,jdbcType=INTEGER},
+      </if>
+      <if test="thirdOrganizationId != null">
+        third_organization_id = #{thirdOrganizationId,jdbcType=INTEGER},
+      </if>
+      <if test="thirdCompanyId != null">
+        third_company_id = #{thirdCompanyId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="productTypeName != null">
+        product_type_name = #{productTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=DECIMAL},
+      </if>
+      <if test="dueTime != null">
+        due_time = #{dueTime,jdbcType=INTEGER},
+      </if>
+      <if test="isService != null">
+        is_service = #{isService,jdbcType=TINYINT},
+      </if>
+      <if test="seviceAmount != null">
+        sevice_amount = #{seviceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="isServiceVerification != null">
+        is_service_verification = #{isServiceVerification,jdbcType=TINYINT},
+      </if>
+      <if test="serviceVerificationUserId != null">
+        service_verification_user_id = #{serviceVerificationUserId,jdbcType=INTEGER},
+      </if>
+      <if test="serviceVerificationTime != null">
+        service_verification_time = #{serviceVerificationTime,jdbcType=INTEGER},
+      </if>
+      <if test="repaymentBankName != null">
+        repayment_bank_name = #{repaymentBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackFiliale != null">
+        repayment_back_filiale = #{repaymentBackFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBackUsername != null">
+        repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentBankNumber != null">
+        repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankName != null">
+        receipt_bank_name = #{receiptBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankCode != null">
+        receipt_bank_code = #{receiptBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankFiliale != null">
+        receipt_bank_filiale = #{receiptBankFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankFilialeBranchno != null">
+        receipt_bank_filiale_branchNo = #{receiptBankFilialeBranchno,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankProvname != null">
+        receipt_bank_provName = #{receiptBankProvname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankCityname != null">
+        receipt_bank_cityName = #{receiptBankCityname,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankUsername != null">
+        receipt_bank_username = #{receiptBankUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptBankNumber != null">
+        receipt_bank_number = #{receiptBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="payBankName != null">
+        pay_bank_name = #{payBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankFiliale != null">
+        pay_bank_filiale = #{payBankFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankRealNumber != null">
+        pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankExtension != null">
+        pay_bank_extension = #{payBankExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankUsername != null">
+        pay_bank_username = #{payBankUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankNumber != null">
+        pay_bank_number = #{payBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payOrderNumber != null">
+        pay_order_number = #{payOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="payNotes != null">
+        pay_notes = #{payNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null">
+        pay_status = #{payStatus,jdbcType=TINYINT},
+      </if>
+      <if test="pledgeNumber != null">
+        pledge_number = #{pledgeNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="estimatePayTime != null">
+        estimate_pay_time = #{estimatePayTime,jdbcType=INTEGER},
+      </if>
+      <if test="paySuccessTime != null">
+        pay_success_time = #{paySuccessTime,jdbcType=INTEGER},
+      </if>
+      <if test="payNoticeTime != null">
+        pay_notice_time = #{payNoticeTime,jdbcType=INTEGER},
+      </if>
+      <if test="callbackUrl != null">
+        callback_url = #{callbackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBillNoticeUrl != null">
+        account_bill_notice_url = #{accountBillNoticeUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="auditStatus != null">
+        audit_status = #{auditStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isClose != null">
+        is_close = #{isClose,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="breakRate != null">
+        break_rate = #{breakRate,jdbcType=DECIMAL},
+      </if>
+      <if test="isGracePeriod != null">
+        is_grace_period = #{isGracePeriod,jdbcType=BIT},
+      </if>
+      <if test="gracePeriod != null">
+        grace_period = #{gracePeriod,jdbcType=INTEGER},
+      </if>
+      <if test="gracePeriodRate != null">
+        grace_period_rate = #{gracePeriodRate,jdbcType=DECIMAL},
+      </if>
+      <if test="compoundRate != null">
+        compound_rate = #{compoundRate,jdbcType=DECIMAL},
+      </if>
+      <if test="repeatRepaymentInstanceName != null">
+        repeat_repayment_instance_name = #{repeatRepaymentInstanceName,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentInstanceNumber != null">
+        repeat_repayment_instance_number = #{repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankExtension != null">
+        repeat_repayment_bank_extension = #{repeatRepaymentBankExtension,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankName != null">
+        repeat_repayment_bank_name = #{repeatRepaymentBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBackFiliale != null">
+        repeat_repayment_back_filiale = #{repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBackUsername != null">
+        repeat_repayment_back_username = #{repeatRepaymentBackUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="repeatRepaymentBankNumber != null">
+        repeat_repayment_bank_number = #{repeatRepaymentBankNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentMethod != null">
+        payment_method = #{paymentMethod,jdbcType=BIT},
+      </if>
+      <if test="repaymentTime != null">
+        repayment_time = #{repaymentTime,jdbcType=INTEGER},
+      </if>
+      <if test="interestTime != null">
+        interest_time = #{interestTime,jdbcType=INTEGER},
+      </if>
+      <if test="transactionId != null">
+        transaction_id = #{transactionId,jdbcType=VARCHAR},
+      </if>
+      <if test="transSeq != null">
+        trans_seq = #{transSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="transStep != null">
+        trans_step = #{transStep,jdbcType=CHAR},
+      </if>
+      <if test="transOrderSeq != null">
+        trans_order_seq = #{transOrderSeq,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNumber != null">
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="applyAmount != null">
+        apply_amount = #{applyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="creditLineId != null">
+        credit_line_id = #{creditLineId,jdbcType=INTEGER},
+      </if>
+      <if test="latestCreditLineId != null">
+        latest_credit_line_id = #{latestCreditLineId,jdbcType=INTEGER},
+      </if>
+      <if test="creditDescription != null">
+        credit_description = #{creditDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="clientNumber != null">
+        client_number = #{clientNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=BIT},
+      </if>
+      <if test="customSellerCompanyId != null">
+        custom_seller_company_id = #{customSellerCompanyId,jdbcType=VARCHAR},
+      </if>
+      <if test="manualAuditReason != null">
+        manual_audit_reason = #{manualAuditReason,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerCompanyIds != null">
+        buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      </if>
+      <if test="contractSignUrl != null">
+        contract_sign_url = #{contractSignUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="payBankAni != null">
+        pay_bank_ANI = #{payBankAni,jdbcType=VARCHAR},
+      </if>
+      <if test="feeRollbackStatus != null">
+        fee_rollback_status = #{feeRollbackStatus,jdbcType=BIT},
+      </if>
+      <if test="feeRollbackTime != null">
+        fee_rollback_time = #{feeRollbackTime,jdbcType=INTEGER},
+      </if>
+      <if test="buyerCompanyNames != null">
+        buyer_company_names = #{buyerCompanyNames,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    update factor_product_order
+    set product_list_id = #{productListId,jdbcType=INTEGER},
+      project_id = #{projectId,jdbcType=INTEGER},
+      credit_company_id = #{creditCompanyId,jdbcType=INTEGER},
+      source = #{source,jdbcType=TINYINT},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      buyer_organization_id = #{buyerOrganizationId,jdbcType=INTEGER},
+      buyer_company_id = #{buyerCompanyId,jdbcType=INTEGER},
+      seller_organization_id = #{sellerOrganizationId,jdbcType=INTEGER},
+      seller_company_id = #{sellerCompanyId,jdbcType=INTEGER},
+      buyer_apply_amount = #{buyerApplyAmount,jdbcType=DECIMAL},
+      seller_apply_amount = #{sellerApplyAmount,jdbcType=DECIMAL},
+      seller_apply_amount_time = #{sellerApplyAmountTime,jdbcType=INTEGER},
+      third_organization_id = #{thirdOrganizationId,jdbcType=INTEGER},
+      third_company_id = #{thirdCompanyId,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DECIMAL},
+      product_type_name = #{productTypeName,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=DECIMAL},
+      due_time = #{dueTime,jdbcType=INTEGER},
+      is_service = #{isService,jdbcType=TINYINT},
+      sevice_amount = #{seviceAmount,jdbcType=DECIMAL},
+      is_service_verification = #{isServiceVerification,jdbcType=TINYINT},
+      service_verification_user_id = #{serviceVerificationUserId,jdbcType=INTEGER},
+      service_verification_time = #{serviceVerificationTime,jdbcType=INTEGER},
+      repayment_bank_name = #{repaymentBankName,jdbcType=VARCHAR},
+      repayment_back_filiale = #{repaymentBackFiliale,jdbcType=VARCHAR},
+      repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      receipt_bank_name = #{receiptBankName,jdbcType=VARCHAR},
+      receipt_bank_code = #{receiptBankCode,jdbcType=VARCHAR},
+      receipt_bank_filiale = #{receiptBankFiliale,jdbcType=VARCHAR},
+      receipt_bank_filiale_branchNo = #{receiptBankFilialeBranchno,jdbcType=VARCHAR},
+      receipt_bank_provName = #{receiptBankProvname,jdbcType=VARCHAR},
+      receipt_bank_cityName = #{receiptBankCityname,jdbcType=VARCHAR},
+      receipt_bank_username = #{receiptBankUsername,jdbcType=VARCHAR},
+      receipt_bank_number = #{receiptBankNumber,jdbcType=VARCHAR},
+      pay_type = #{payType,jdbcType=TINYINT},
+      pay_bank_name = #{payBankName,jdbcType=VARCHAR},
+      pay_bank_filiale = #{payBankFiliale,jdbcType=VARCHAR},
+      pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      pay_bank_extension = #{payBankExtension,jdbcType=VARCHAR},
+      pay_bank_username = #{payBankUsername,jdbcType=VARCHAR},
+      pay_bank_number = #{payBankNumber,jdbcType=VARCHAR},
+      pay_order_number = #{payOrderNumber,jdbcType=VARCHAR},
+      pay_notes = #{payNotes,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      pledge_number = #{pledgeNumber,jdbcType=VARCHAR},
+      estimate_pay_time = #{estimatePayTime,jdbcType=INTEGER},
+      pay_success_time = #{paySuccessTime,jdbcType=INTEGER},
+      pay_notice_time = #{payNoticeTime,jdbcType=INTEGER},
+      callback_url = #{callbackUrl,jdbcType=VARCHAR},
+      account_bill_notice_url = #{accountBillNoticeUrl,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      audit_status = #{auditStatus,jdbcType=TINYINT},
+      is_close = #{isClose,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      break_rate = #{breakRate,jdbcType=DECIMAL},
+      is_grace_period = #{isGracePeriod,jdbcType=BIT},
+      grace_period = #{gracePeriod,jdbcType=INTEGER},
+      grace_period_rate = #{gracePeriodRate,jdbcType=DECIMAL},
+      compound_rate = #{compoundRate,jdbcType=DECIMAL},
+      repeat_repayment_instance_name = #{repeatRepaymentInstanceName,jdbcType=VARCHAR},
+      repeat_repayment_instance_number = #{repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+      repeat_repayment_bank_extension = #{repeatRepaymentBankExtension,jdbcType=VARCHAR},
+      repeat_repayment_bank_name = #{repeatRepaymentBankName,jdbcType=VARCHAR},
+      repeat_repayment_back_filiale = #{repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+      repeat_repayment_back_username = #{repeatRepaymentBackUsername,jdbcType=VARCHAR},
+      repeat_repayment_bank_number = #{repeatRepaymentBankNumber,jdbcType=VARCHAR},
+      payment_method = #{paymentMethod,jdbcType=BIT},
+      repayment_time = #{repaymentTime,jdbcType=INTEGER},
+      interest_time = #{interestTime,jdbcType=INTEGER},
+      transaction_id = #{transactionId,jdbcType=VARCHAR},
+      trans_seq = #{transSeq,jdbcType=VARCHAR},
+      trans_step = #{transStep,jdbcType=CHAR},
+      trans_order_seq = #{transOrderSeq,jdbcType=INTEGER},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      apply_amount = #{applyAmount,jdbcType=DECIMAL},
+      credit_line_id = #{creditLineId,jdbcType=INTEGER},
+      latest_credit_line_id = #{latestCreditLineId,jdbcType=INTEGER},
+      credit_description = #{creditDescription,jdbcType=VARCHAR},
+      client_number = #{clientNumber,jdbcType=VARCHAR},
+      order_status = #{orderStatus,jdbcType=BIT},
+      custom_seller_company_id = #{customSellerCompanyId,jdbcType=VARCHAR},
+      manual_audit_reason = #{manualAuditReason,jdbcType=VARCHAR},
+      buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      contract_sign_url = #{contractSignUrl,jdbcType=VARCHAR},
+      pay_bank_ANI = #{payBankAni,jdbcType=VARCHAR},
+      fee_rollback_status = #{feeRollbackStatus,jdbcType=BIT},
+      fee_rollback_time = #{feeRollbackTime,jdbcType=INTEGER},
+      buyer_company_names = #{buyerCompanyNames,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.glp.backend.mybatis.generate.factor.pojo.FactorProductOrder">
+    update factor_product_order
+    set product_list_id = #{productListId,jdbcType=INTEGER},
+      project_id = #{projectId,jdbcType=INTEGER},
+      credit_company_id = #{creditCompanyId,jdbcType=INTEGER},
+      source = #{source,jdbcType=TINYINT},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      buyer_organization_id = #{buyerOrganizationId,jdbcType=INTEGER},
+      buyer_company_id = #{buyerCompanyId,jdbcType=INTEGER},
+      seller_organization_id = #{sellerOrganizationId,jdbcType=INTEGER},
+      seller_company_id = #{sellerCompanyId,jdbcType=INTEGER},
+      buyer_apply_amount = #{buyerApplyAmount,jdbcType=DECIMAL},
+      seller_apply_amount = #{sellerApplyAmount,jdbcType=DECIMAL},
+      seller_apply_amount_time = #{sellerApplyAmountTime,jdbcType=INTEGER},
+      third_organization_id = #{thirdOrganizationId,jdbcType=INTEGER},
+      third_company_id = #{thirdCompanyId,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=DECIMAL},
+      product_type_name = #{productTypeName,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=DECIMAL},
+      due_time = #{dueTime,jdbcType=INTEGER},
+      is_service = #{isService,jdbcType=TINYINT},
+      sevice_amount = #{seviceAmount,jdbcType=DECIMAL},
+      is_service_verification = #{isServiceVerification,jdbcType=TINYINT},
+      service_verification_user_id = #{serviceVerificationUserId,jdbcType=INTEGER},
+      service_verification_time = #{serviceVerificationTime,jdbcType=INTEGER},
+      repayment_bank_name = #{repaymentBankName,jdbcType=VARCHAR},
+      repayment_back_filiale = #{repaymentBackFiliale,jdbcType=VARCHAR},
+      repayment_back_username = #{repaymentBackUsername,jdbcType=VARCHAR},
+      repayment_bank_number = #{repaymentBankNumber,jdbcType=VARCHAR},
+      receipt_bank_name = #{receiptBankName,jdbcType=VARCHAR},
+      receipt_bank_code = #{receiptBankCode,jdbcType=VARCHAR},
+      receipt_bank_filiale = #{receiptBankFiliale,jdbcType=VARCHAR},
+      receipt_bank_filiale_branchNo = #{receiptBankFilialeBranchno,jdbcType=VARCHAR},
+      receipt_bank_provName = #{receiptBankProvname,jdbcType=VARCHAR},
+      receipt_bank_cityName = #{receiptBankCityname,jdbcType=VARCHAR},
+      receipt_bank_username = #{receiptBankUsername,jdbcType=VARCHAR},
+      receipt_bank_number = #{receiptBankNumber,jdbcType=VARCHAR},
+      pay_type = #{payType,jdbcType=TINYINT},
+      pay_bank_name = #{payBankName,jdbcType=VARCHAR},
+      pay_bank_filiale = #{payBankFiliale,jdbcType=VARCHAR},
+      pay_bank_real_number = #{payBankRealNumber,jdbcType=VARCHAR},
+      pay_bank_extension = #{payBankExtension,jdbcType=VARCHAR},
+      pay_bank_username = #{payBankUsername,jdbcType=VARCHAR},
+      pay_bank_number = #{payBankNumber,jdbcType=VARCHAR},
+      pay_order_number = #{payOrderNumber,jdbcType=VARCHAR},
+      pay_notes = #{payNotes,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=TINYINT},
+      pledge_number = #{pledgeNumber,jdbcType=VARCHAR},
+      estimate_pay_time = #{estimatePayTime,jdbcType=INTEGER},
+      pay_success_time = #{paySuccessTime,jdbcType=INTEGER},
+      pay_notice_time = #{payNoticeTime,jdbcType=INTEGER},
+      callback_url = #{callbackUrl,jdbcType=VARCHAR},
+      account_bill_notice_url = #{accountBillNoticeUrl,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      audit_status = #{auditStatus,jdbcType=TINYINT},
+      is_close = #{isClose,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      break_rate = #{breakRate,jdbcType=DECIMAL},
+      is_grace_period = #{isGracePeriod,jdbcType=BIT},
+      grace_period = #{gracePeriod,jdbcType=INTEGER},
+      grace_period_rate = #{gracePeriodRate,jdbcType=DECIMAL},
+      compound_rate = #{compoundRate,jdbcType=DECIMAL},
+      repeat_repayment_instance_name = #{repeatRepaymentInstanceName,jdbcType=VARCHAR},
+      repeat_repayment_instance_number = #{repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+      repeat_repayment_bank_extension = #{repeatRepaymentBankExtension,jdbcType=VARCHAR},
+      repeat_repayment_bank_name = #{repeatRepaymentBankName,jdbcType=VARCHAR},
+      repeat_repayment_back_filiale = #{repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+      repeat_repayment_back_username = #{repeatRepaymentBackUsername,jdbcType=VARCHAR},
+      repeat_repayment_bank_number = #{repeatRepaymentBankNumber,jdbcType=VARCHAR},
+      payment_method = #{paymentMethod,jdbcType=BIT},
+      repayment_time = #{repaymentTime,jdbcType=INTEGER},
+      interest_time = #{interestTime,jdbcType=INTEGER},
+      transaction_id = #{transactionId,jdbcType=VARCHAR},
+      trans_seq = #{transSeq,jdbcType=VARCHAR},
+      trans_step = #{transStep,jdbcType=CHAR},
+      trans_order_seq = #{transOrderSeq,jdbcType=INTEGER},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      apply_amount = #{applyAmount,jdbcType=DECIMAL},
+      credit_line_id = #{creditLineId,jdbcType=INTEGER},
+      latest_credit_line_id = #{latestCreditLineId,jdbcType=INTEGER},
+      credit_description = #{creditDescription,jdbcType=VARCHAR},
+      client_number = #{clientNumber,jdbcType=VARCHAR},
+      order_status = #{orderStatus,jdbcType=BIT},
+      custom_seller_company_id = #{customSellerCompanyId,jdbcType=VARCHAR},
+      manual_audit_reason = #{manualAuditReason,jdbcType=VARCHAR},
+      buyer_company_ids = #{buyerCompanyIds,jdbcType=VARCHAR},
+      contract_sign_url = #{contractSignUrl,jdbcType=VARCHAR},
+      pay_bank_ANI = #{payBankAni,jdbcType=VARCHAR},
+      fee_rollback_status = #{feeRollbackStatus,jdbcType=BIT},
+      fee_rollback_time = #{feeRollbackTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getFactorBills" resultMap="com.glp.backend.mybatis.generate.factor.dao.FactorBillMapper.BaseResultMap">
+    select id,factor_order_id,order_type,factor_requisition_id,order_number,number,amount,time_limit,rate,buyer_enterprise_id,buyer_id,buyer_name,seller_enterprise_id,seller_id,seller_name,interest_time,end_repayment_time,pay_bank_real_number,payerCity,repayment_back_username,repayment_bank_number,estimate_repayment_amount,estimate_balance,estimate_interest,reality_balance,reality_interest,reality_normal_interest,reality_grace_interest,reality_break_interest,reality_compound_interest,today_interest,today_normal_interest,today_grace_interest,today_break_interest,today_compound_interest,surplus_balance,status,settle_time,is_compensatory,is_reduce_interest,reduce_interest_amount,buyer_company_ids,create_time,update_time,is_bad_debt,bad_reality_interest_to_balance,bad_strike_balance,bad_balance,bad_interest,bad_strike_interest,is_compensatory_interest,buyer_company_names from factor_bill where order_number=#{orderNumber} 
+  </select>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into factor_product_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].productListId!=null">
+        product_list_id,
+      </if>
+      <if test="list[0].projectId!=null">
+        project_id,
+      </if>
+      <if test="list[0].creditCompanyId!=null">
+        credit_company_id,
+      </if>
+      <if test="list[0].source!=null">
+        source,
+      </if>
+      <if test="list[0].orderNumber!=null">
+        order_number,
+      </if>
+      <if test="list[0].buyerOrganizationId!=null">
+        buyer_organization_id,
+      </if>
+      <if test="list[0].buyerCompanyId!=null">
+        buyer_company_id,
+      </if>
+      <if test="list[0].sellerOrganizationId!=null">
+        seller_organization_id,
+      </if>
+      <if test="list[0].sellerCompanyId!=null">
+        seller_company_id,
+      </if>
+      <if test="list[0].buyerApplyAmount!=null">
+        buyer_apply_amount,
+      </if>
+      <if test="list[0].sellerApplyAmount!=null">
+        seller_apply_amount,
+      </if>
+      <if test="list[0].sellerApplyAmountTime!=null">
+        seller_apply_amount_time,
+      </if>
+      <if test="list[0].thirdOrganizationId!=null">
+        third_organization_id,
+      </if>
+      <if test="list[0].thirdCompanyId!=null">
+        third_company_id,
+      </if>
+      <if test="list[0].amount!=null">
+        amount,
+      </if>
+      <if test="list[0].productTypeName!=null">
+        product_type_name,
+      </if>
+      <if test="list[0].rate!=null">
+        rate,
+      </if>
+      <if test="list[0].dueTime!=null">
+        due_time,
+      </if>
+      <if test="list[0].isService!=null">
+        is_service,
+      </if>
+      <if test="list[0].seviceAmount!=null">
+        sevice_amount,
+      </if>
+      <if test="list[0].isServiceVerification!=null">
+        is_service_verification,
+      </if>
+      <if test="list[0].serviceVerificationUserId!=null">
+        service_verification_user_id,
+      </if>
+      <if test="list[0].serviceVerificationTime!=null">
+        service_verification_time,
+      </if>
+      <if test="list[0].repaymentBankName!=null">
+        repayment_bank_name,
+      </if>
+      <if test="list[0].repaymentBackFiliale!=null">
+        repayment_back_filiale,
+      </if>
+      <if test="list[0].repaymentBackUsername!=null">
+        repayment_back_username,
+      </if>
+      <if test="list[0].repaymentBankNumber!=null">
+        repayment_bank_number,
+      </if>
+      <if test="list[0].receiptBankName!=null">
+        receipt_bank_name,
+      </if>
+      <if test="list[0].receiptBankCode!=null">
+        receipt_bank_code,
+      </if>
+      <if test="list[0].receiptBankFiliale!=null">
+        receipt_bank_filiale,
+      </if>
+      <if test="list[0].receiptBankFilialeBranchno!=null">
+        receipt_bank_filiale_branchNo,
+      </if>
+      <if test="list[0].receiptBankProvname!=null">
+        receipt_bank_provName,
+      </if>
+      <if test="list[0].receiptBankCityname!=null">
+        receipt_bank_cityName,
+      </if>
+      <if test="list[0].receiptBankUsername!=null">
+        receipt_bank_username,
+      </if>
+      <if test="list[0].receiptBankNumber!=null">
+        receipt_bank_number,
+      </if>
+      <if test="list[0].payType!=null">
+        pay_type,
+      </if>
+      <if test="list[0].payBankName!=null">
+        pay_bank_name,
+      </if>
+      <if test="list[0].payBankFiliale!=null">
+        pay_bank_filiale,
+      </if>
+      <if test="list[0].payBankRealNumber!=null">
+        pay_bank_real_number,
+      </if>
+      <if test="list[0].payBankExtension!=null">
+        pay_bank_extension,
+      </if>
+      <if test="list[0].payBankUsername!=null">
+        pay_bank_username,
+      </if>
+      <if test="list[0].payBankNumber!=null">
+        pay_bank_number,
+      </if>
+      <if test="list[0].payOrderNumber!=null">
+        pay_order_number,
+      </if>
+      <if test="list[0].payNotes!=null">
+        pay_notes,
+      </if>
+      <if test="list[0].payStatus!=null">
+        pay_status,
+      </if>
+      <if test="list[0].pledgeNumber!=null">
+        pledge_number,
+      </if>
+      <if test="list[0].estimatePayTime!=null">
+        estimate_pay_time,
+      </if>
+      <if test="list[0].paySuccessTime!=null">
+        pay_success_time,
+      </if>
+      <if test="list[0].payNoticeTime!=null">
+        pay_notice_time,
+      </if>
+      <if test="list[0].callbackUrl!=null">
+        callback_url,
+      </if>
+      <if test="list[0].accountBillNoticeUrl!=null">
+        account_bill_notice_url,
+      </if>
+      <if test="list[0].status!=null">
+        status,
+      </if>
+      <if test="list[0].auditStatus!=null">
+        audit_status,
+      </if>
+      <if test="list[0].isClose!=null">
+        is_close,
+      </if>
+      <if test="list[0].createTime!=null">
+        create_time,
+      </if>
+      <if test="list[0].updateTime!=null">
+        update_time,
+      </if>
+      <if test="list[0].breakRate!=null">
+        break_rate,
+      </if>
+      <if test="list[0].isGracePeriod!=null">
+        is_grace_period,
+      </if>
+      <if test="list[0].gracePeriod!=null">
+        grace_period,
+      </if>
+      <if test="list[0].gracePeriodRate!=null">
+        grace_period_rate,
+      </if>
+      <if test="list[0].compoundRate!=null">
+        compound_rate,
+      </if>
+      <if test="list[0].repeatRepaymentInstanceName!=null">
+        repeat_repayment_instance_name,
+      </if>
+      <if test="list[0].repeatRepaymentInstanceNumber!=null">
+        repeat_repayment_instance_number,
+      </if>
+      <if test="list[0].repeatRepaymentBankExtension!=null">
+        repeat_repayment_bank_extension,
+      </if>
+      <if test="list[0].repeatRepaymentBankName!=null">
+        repeat_repayment_bank_name,
+      </if>
+      <if test="list[0].repeatRepaymentBackFiliale!=null">
+        repeat_repayment_back_filiale,
+      </if>
+      <if test="list[0].repeatRepaymentBackUsername!=null">
+        repeat_repayment_back_username,
+      </if>
+      <if test="list[0].repeatRepaymentBankNumber!=null">
+        repeat_repayment_bank_number,
+      </if>
+      <if test="list[0].paymentMethod!=null">
+        payment_method,
+      </if>
+      <if test="list[0].repaymentTime!=null">
+        repayment_time,
+      </if>
+      <if test="list[0].interestTime!=null">
+        interest_time,
+      </if>
+      <if test="list[0].transactionId!=null">
+        transaction_id,
+      </if>
+      <if test="list[0].transSeq!=null">
+        trans_seq,
+      </if>
+      <if test="list[0].transStep!=null">
+        trans_step,
+      </if>
+      <if test="list[0].transOrderSeq!=null">
+        trans_order_seq,
+      </if>
+      <if test="list[0].phoneNumber!=null">
+        phone_number,
+      </if>
+      <if test="list[0].applyAmount!=null">
+        apply_amount,
+      </if>
+      <if test="list[0].creditLineId!=null">
+        credit_line_id,
+      </if>
+      <if test="list[0].latestCreditLineId!=null">
+        latest_credit_line_id,
+      </if>
+      <if test="list[0].creditDescription!=null">
+        credit_description,
+      </if>
+      <if test="list[0].clientNumber!=null">
+        client_number,
+      </if>
+      <if test="list[0].orderStatus!=null">
+        order_status,
+      </if>
+      <if test="list[0].customSellerCompanyId!=null">
+        custom_seller_company_id,
+      </if>
+      <if test="list[0].manualAuditReason!=null">
+        manual_audit_reason,
+      </if>
+      <if test="list[0].buyerCompanyIds!=null">
+        buyer_company_ids,
+      </if>
+      <if test="list[0].contractSignUrl!=null">
+        contract_sign_url,
+      </if>
+      <if test="list[0].payBankAni!=null">
+        pay_bank_ANI,
+      </if>
+      <if test="list[0].feeRollbackStatus!=null">
+        fee_rollback_status,
+      </if>
+      <if test="list[0].feeRollbackTime!=null">
+        fee_rollback_time,
+      </if>
+      <if test="list[0].buyerCompanyNames!=null">
+        buyer_company_names,
+      </if>
+    </trim>
+     values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.productListId!=null">
+          #{item.productListId,jdbcType=INTEGER},
+        </if>
+        <if test="item.projectId!=null">
+          #{item.projectId,jdbcType=INTEGER},
+        </if>
+        <if test="item.creditCompanyId!=null">
+          #{item.creditCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.source!=null">
+          #{item.source,jdbcType=TINYINT},
+        </if>
+        <if test="item.orderNumber!=null">
+          #{item.orderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.buyerOrganizationId!=null">
+          #{item.buyerOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerCompanyId!=null">
+          #{item.buyerCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerOrganizationId!=null">
+          #{item.sellerOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerCompanyId!=null">
+          #{item.sellerCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerApplyAmount!=null">
+          #{item.buyerApplyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.sellerApplyAmount!=null">
+          #{item.sellerApplyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.sellerApplyAmountTime!=null">
+          #{item.sellerApplyAmountTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirdOrganizationId!=null">
+          #{item.thirdOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirdCompanyId!=null">
+          #{item.thirdCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.amount!=null">
+          #{item.amount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.productTypeName!=null">
+          #{item.productTypeName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.rate!=null">
+          #{item.rate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.dueTime!=null">
+          #{item.dueTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isService!=null">
+          #{item.isService,jdbcType=TINYINT},
+        </if>
+        <if test="item.seviceAmount!=null">
+          #{item.seviceAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isServiceVerification!=null">
+          #{item.isServiceVerification,jdbcType=TINYINT},
+        </if>
+        <if test="item.serviceVerificationUserId!=null">
+          #{item.serviceVerificationUserId,jdbcType=INTEGER},
+        </if>
+        <if test="item.serviceVerificationTime!=null">
+          #{item.serviceVerificationTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.repaymentBankName!=null">
+          #{item.repaymentBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackFiliale!=null">
+          #{item.repaymentBackFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackUsername!=null">
+          #{item.repaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBankNumber!=null">
+          #{item.repaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankName!=null">
+          #{item.receiptBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankCode!=null">
+          #{item.receiptBankCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankFiliale!=null">
+          #{item.receiptBankFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankFilialeBranchno!=null">
+          #{item.receiptBankFilialeBranchno,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankProvname!=null">
+          #{item.receiptBankProvname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankCityname!=null">
+          #{item.receiptBankCityname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankUsername!=null">
+          #{item.receiptBankUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankNumber!=null">
+          #{item.receiptBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payType!=null">
+          #{item.payType,jdbcType=TINYINT},
+        </if>
+        <if test="item.payBankName!=null">
+          #{item.payBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankFiliale!=null">
+          #{item.payBankFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankRealNumber!=null">
+          #{item.payBankRealNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankExtension!=null">
+          #{item.payBankExtension,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankUsername!=null">
+          #{item.payBankUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankNumber!=null">
+          #{item.payBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payOrderNumber!=null">
+          #{item.payOrderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payNotes!=null">
+          #{item.payNotes,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payStatus!=null">
+          #{item.payStatus,jdbcType=TINYINT},
+        </if>
+        <if test="item.pledgeNumber!=null">
+          #{item.pledgeNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.estimatePayTime!=null">
+          #{item.estimatePayTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.paySuccessTime!=null">
+          #{item.paySuccessTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.payNoticeTime!=null">
+          #{item.payNoticeTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.callbackUrl!=null">
+          #{item.callbackUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.accountBillNoticeUrl!=null">
+          #{item.accountBillNoticeUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.status!=null">
+          #{item.status,jdbcType=TINYINT},
+        </if>
+        <if test="item.auditStatus!=null">
+          #{item.auditStatus,jdbcType=TINYINT},
+        </if>
+        <if test="item.isClose!=null">
+          #{item.isClose,jdbcType=TINYINT},
+        </if>
+        <if test="item.createTime!=null">
+          #{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          #{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.breakRate!=null">
+          #{item.breakRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isGracePeriod!=null">
+          #{item.isGracePeriod,jdbcType=BIT},
+        </if>
+        <if test="item.gracePeriod!=null">
+          #{item.gracePeriod,jdbcType=INTEGER},
+        </if>
+        <if test="item.gracePeriodRate!=null">
+          #{item.gracePeriodRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.compoundRate!=null">
+          #{item.compoundRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.repeatRepaymentInstanceName!=null">
+          #{item.repeatRepaymentInstanceName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentInstanceNumber!=null">
+          #{item.repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankExtension!=null">
+          #{item.repeatRepaymentBankExtension,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankName!=null">
+          #{item.repeatRepaymentBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBackFiliale!=null">
+          #{item.repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBackUsername!=null">
+          #{item.repeatRepaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankNumber!=null">
+          #{item.repeatRepaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.paymentMethod!=null">
+          #{item.paymentMethod,jdbcType=BIT},
+        </if>
+        <if test="item.repaymentTime!=null">
+          #{item.repaymentTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.interestTime!=null">
+          #{item.interestTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.transactionId!=null">
+          #{item.transactionId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.transSeq!=null">
+          #{item.transSeq,jdbcType=VARCHAR},
+        </if>
+        <if test="item.transStep!=null">
+          #{item.transStep,jdbcType=CHAR},
+        </if>
+        <if test="item.transOrderSeq!=null">
+          #{item.transOrderSeq,jdbcType=INTEGER},
+        </if>
+        <if test="item.phoneNumber!=null">
+          #{item.phoneNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.applyAmount!=null">
+          #{item.applyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.creditLineId!=null">
+          #{item.creditLineId,jdbcType=INTEGER},
+        </if>
+        <if test="item.latestCreditLineId!=null">
+          #{item.latestCreditLineId,jdbcType=INTEGER},
+        </if>
+        <if test="item.creditDescription!=null">
+          #{item.creditDescription,jdbcType=VARCHAR},
+        </if>
+        <if test="item.clientNumber!=null">
+          #{item.clientNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.orderStatus!=null">
+          #{item.orderStatus,jdbcType=BIT},
+        </if>
+        <if test="item.customSellerCompanyId!=null">
+          #{item.customSellerCompanyId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.manualAuditReason!=null">
+          #{item.manualAuditReason,jdbcType=VARCHAR},
+        </if>
+        <if test="item.buyerCompanyIds!=null">
+          #{item.buyerCompanyIds,jdbcType=VARCHAR},
+        </if>
+        <if test="item.contractSignUrl!=null">
+          #{item.contractSignUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankAni!=null">
+          #{item.payBankAni,jdbcType=VARCHAR},
+        </if>
+        <if test="item.feeRollbackStatus!=null">
+          #{item.feeRollbackStatus,jdbcType=BIT},
+        </if>
+        <if test="item.feeRollbackTime!=null">
+          #{item.feeRollbackTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerCompanyNames!=null">
+          #{item.buyerCompanyNames,jdbcType=LONGVARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    <foreach collection="list" index="index" item="item" separator=";">
+      update factor_product_order
+      <set>
+        <if test="item.productListId!=null">
+          product_list_id=#{item.productListId,jdbcType=INTEGER},
+        </if>
+        <if test="item.projectId!=null">
+          project_id=#{item.projectId,jdbcType=INTEGER},
+        </if>
+        <if test="item.creditCompanyId!=null">
+          credit_company_id=#{item.creditCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.source!=null">
+          source=#{item.source,jdbcType=TINYINT},
+        </if>
+        <if test="item.orderNumber!=null">
+          order_number=#{item.orderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.buyerOrganizationId!=null">
+          buyer_organization_id=#{item.buyerOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerCompanyId!=null">
+          buyer_company_id=#{item.buyerCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerOrganizationId!=null">
+          seller_organization_id=#{item.sellerOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.sellerCompanyId!=null">
+          seller_company_id=#{item.sellerCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerApplyAmount!=null">
+          buyer_apply_amount=#{item.buyerApplyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.sellerApplyAmount!=null">
+          seller_apply_amount=#{item.sellerApplyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.sellerApplyAmountTime!=null">
+          seller_apply_amount_time=#{item.sellerApplyAmountTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirdOrganizationId!=null">
+          third_organization_id=#{item.thirdOrganizationId,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirdCompanyId!=null">
+          third_company_id=#{item.thirdCompanyId,jdbcType=INTEGER},
+        </if>
+        <if test="item.amount!=null">
+          amount=#{item.amount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.productTypeName!=null">
+          product_type_name=#{item.productTypeName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.rate!=null">
+          rate=#{item.rate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.dueTime!=null">
+          due_time=#{item.dueTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.isService!=null">
+          is_service=#{item.isService,jdbcType=TINYINT},
+        </if>
+        <if test="item.seviceAmount!=null">
+          sevice_amount=#{item.seviceAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isServiceVerification!=null">
+          is_service_verification=#{item.isServiceVerification,jdbcType=TINYINT},
+        </if>
+        <if test="item.serviceVerificationUserId!=null">
+          service_verification_user_id=#{item.serviceVerificationUserId,jdbcType=INTEGER},
+        </if>
+        <if test="item.serviceVerificationTime!=null">
+          service_verification_time=#{item.serviceVerificationTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.repaymentBankName!=null">
+          repayment_bank_name=#{item.repaymentBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackFiliale!=null">
+          repayment_back_filiale=#{item.repaymentBackFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBackUsername!=null">
+          repayment_back_username=#{item.repaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repaymentBankNumber!=null">
+          repayment_bank_number=#{item.repaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankName!=null">
+          receipt_bank_name=#{item.receiptBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankCode!=null">
+          receipt_bank_code=#{item.receiptBankCode,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankFiliale!=null">
+          receipt_bank_filiale=#{item.receiptBankFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankFilialeBranchno!=null">
+          receipt_bank_filiale_branchNo=#{item.receiptBankFilialeBranchno,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankProvname!=null">
+          receipt_bank_provName=#{item.receiptBankProvname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankCityname!=null">
+          receipt_bank_cityName=#{item.receiptBankCityname,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankUsername!=null">
+          receipt_bank_username=#{item.receiptBankUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.receiptBankNumber!=null">
+          receipt_bank_number=#{item.receiptBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payType!=null">
+          pay_type=#{item.payType,jdbcType=TINYINT},
+        </if>
+        <if test="item.payBankName!=null">
+          pay_bank_name=#{item.payBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankFiliale!=null">
+          pay_bank_filiale=#{item.payBankFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankRealNumber!=null">
+          pay_bank_real_number=#{item.payBankRealNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankExtension!=null">
+          pay_bank_extension=#{item.payBankExtension,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankUsername!=null">
+          pay_bank_username=#{item.payBankUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankNumber!=null">
+          pay_bank_number=#{item.payBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payOrderNumber!=null">
+          pay_order_number=#{item.payOrderNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payNotes!=null">
+          pay_notes=#{item.payNotes,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payStatus!=null">
+          pay_status=#{item.payStatus,jdbcType=TINYINT},
+        </if>
+        <if test="item.pledgeNumber!=null">
+          pledge_number=#{item.pledgeNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.estimatePayTime!=null">
+          estimate_pay_time=#{item.estimatePayTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.paySuccessTime!=null">
+          pay_success_time=#{item.paySuccessTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.payNoticeTime!=null">
+          pay_notice_time=#{item.payNoticeTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.callbackUrl!=null">
+          callback_url=#{item.callbackUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.accountBillNoticeUrl!=null">
+          account_bill_notice_url=#{item.accountBillNoticeUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.status!=null">
+          status=#{item.status,jdbcType=TINYINT},
+        </if>
+        <if test="item.auditStatus!=null">
+          audit_status=#{item.auditStatus,jdbcType=TINYINT},
+        </if>
+        <if test="item.isClose!=null">
+          is_close=#{item.isClose,jdbcType=TINYINT},
+        </if>
+        <if test="item.createTime!=null">
+          create_time=#{item.createTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.updateTime!=null">
+          update_time=#{item.updateTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.breakRate!=null">
+          break_rate=#{item.breakRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.isGracePeriod!=null">
+          is_grace_period=#{item.isGracePeriod,jdbcType=BIT},
+        </if>
+        <if test="item.gracePeriod!=null">
+          grace_period=#{item.gracePeriod,jdbcType=INTEGER},
+        </if>
+        <if test="item.gracePeriodRate!=null">
+          grace_period_rate=#{item.gracePeriodRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.compoundRate!=null">
+          compound_rate=#{item.compoundRate,jdbcType=DECIMAL},
+        </if>
+        <if test="item.repeatRepaymentInstanceName!=null">
+          repeat_repayment_instance_name=#{item.repeatRepaymentInstanceName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentInstanceNumber!=null">
+          repeat_repayment_instance_number=#{item.repeatRepaymentInstanceNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankExtension!=null">
+          repeat_repayment_bank_extension=#{item.repeatRepaymentBankExtension,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankName!=null">
+          repeat_repayment_bank_name=#{item.repeatRepaymentBankName,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBackFiliale!=null">
+          repeat_repayment_back_filiale=#{item.repeatRepaymentBackFiliale,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBackUsername!=null">
+          repeat_repayment_back_username=#{item.repeatRepaymentBackUsername,jdbcType=VARCHAR},
+        </if>
+        <if test="item.repeatRepaymentBankNumber!=null">
+          repeat_repayment_bank_number=#{item.repeatRepaymentBankNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.paymentMethod!=null">
+          payment_method=#{item.paymentMethod,jdbcType=BIT},
+        </if>
+        <if test="item.repaymentTime!=null">
+          repayment_time=#{item.repaymentTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.interestTime!=null">
+          interest_time=#{item.interestTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.transactionId!=null">
+          transaction_id=#{item.transactionId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.transSeq!=null">
+          trans_seq=#{item.transSeq,jdbcType=VARCHAR},
+        </if>
+        <if test="item.transStep!=null">
+          trans_step=#{item.transStep,jdbcType=CHAR},
+        </if>
+        <if test="item.transOrderSeq!=null">
+          trans_order_seq=#{item.transOrderSeq,jdbcType=INTEGER},
+        </if>
+        <if test="item.phoneNumber!=null">
+          phone_number=#{item.phoneNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.applyAmount!=null">
+          apply_amount=#{item.applyAmount,jdbcType=DECIMAL},
+        </if>
+        <if test="item.creditLineId!=null">
+          credit_line_id=#{item.creditLineId,jdbcType=INTEGER},
+        </if>
+        <if test="item.latestCreditLineId!=null">
+          latest_credit_line_id=#{item.latestCreditLineId,jdbcType=INTEGER},
+        </if>
+        <if test="item.creditDescription!=null">
+          credit_description=#{item.creditDescription,jdbcType=VARCHAR},
+        </if>
+        <if test="item.clientNumber!=null">
+          client_number=#{item.clientNumber,jdbcType=VARCHAR},
+        </if>
+        <if test="item.orderStatus!=null">
+          order_status=#{item.orderStatus,jdbcType=BIT},
+        </if>
+        <if test="item.customSellerCompanyId!=null">
+          custom_seller_company_id=#{item.customSellerCompanyId,jdbcType=VARCHAR},
+        </if>
+        <if test="item.manualAuditReason!=null">
+          manual_audit_reason=#{item.manualAuditReason,jdbcType=VARCHAR},
+        </if>
+        <if test="item.buyerCompanyIds!=null">
+          buyer_company_ids=#{item.buyerCompanyIds,jdbcType=VARCHAR},
+        </if>
+        <if test="item.contractSignUrl!=null">
+          contract_sign_url=#{item.contractSignUrl,jdbcType=VARCHAR},
+        </if>
+        <if test="item.payBankAni!=null">
+          pay_bank_ANI=#{item.payBankAni,jdbcType=VARCHAR},
+        </if>
+        <if test="item.feeRollbackStatus!=null">
+          fee_rollback_status=#{item.feeRollbackStatus,jdbcType=BIT},
+        </if>
+        <if test="item.feeRollbackTime!=null">
+          fee_rollback_time=#{item.feeRollbackTime,jdbcType=INTEGER},
+        </if>
+        <if test="item.buyerCompanyNames!=null">
+          buyer_company_names=#{item.buyerCompanyNames,jdbcType=LONGVARCHAR},
+        </if>
+      </set>
+      where 
+      id = #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+</mapper>

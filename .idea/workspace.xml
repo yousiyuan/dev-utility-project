@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b2d8cdc-d45f-47a8-bf83-a8dc43bfb410" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/multiple-database-sample/target/" />
+    <ignored path="$PROJECT_DIR$/tools-mybatis-generator/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/java8-script-engine/target/" />
+    <ignored path="$PROJECT_DIR$/middleware-kafka-service/target/" />
+    <ignored path="$PROJECT_DIR$/backend-risk-api/target/" />
+    <ignored path="$PROJECT_DIR$/hadoop-database-sample/target/" />
+    <ignored path="$PROJECT_DIR$/tools-mybatis-tk/target/" />
+    <ignored path="$PROJECT_DIR$/tools-mybatis-plus/target/" />
+    <ignored path="$PROJECT_DIR$/backend-risk-rule/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="142" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/test/java/com/glp/module/hbase/service/test/GlpHadoopApplicationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/java/com/glp/module/hbase/service/configuration/hbase/HbaseConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="method#HbaseConfig#0;class#HbaseConfig#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>javax.transaction-api</find>
+      <find>&lt;artifactId&gt;mapper&lt;/artifactId&gt;</find>
+      <find>C:/maven/repository/mysql/</find>
+      <find>C:/maven/repository/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>C:/javawebhost/dbdriver/mysql-connector-java-8.0.17.jar</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/tools-mybatis-tk/src/main/java/com/glp/backend/risk/tools/configuration/MybatisTKConfiguration.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/tools-mybatis-tk/pom.xml" />
+        <option value="$PROJECT_DIR$/multiple-database-sample/pom.xml" />
+        <option value="$PROJECT_DIR$/tools-mybatis-generator/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/hadoop-database-sample/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/hadoop-database-sample/target/classes/application.properties" />
+        <option value="$PROJECT_DIR$/hadoop-database-sample/src/main/java/com/glp/module/hbase/service/configuration/hbase/HbaseConfig.java" />
+        <option value="$PROJECT_DIR$/hadoop-database-sample/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/javawebhost/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="C:\javawebhost\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="14" />
+    <option name="y" value="12" />
+    <option name="width" value="1886" />
+    <option name="height" value="1030" />
+  </component>
+  <component name="ProjectId" id="1TYaR8zTO0zkrSnViDWBbb9qOl5" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+              <item name="hbase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="glp-backend-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="glp-backend-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="hadoop-database-sample" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576087721824" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../artemtis-profile-demo1" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\uat" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\test" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config" />
+      <recent name="C:\IdeaProjects\bigdata\glp-backend-parent\hadoop-database-sample\src\main\resources\config\hbase" />
+      <recent name="C:\IdeaProjects\bigdata\glp-backend-parent\hadoop-database-sample\src\main\resources\config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.glp.data.warehouse.entity.glp.bluser" />
+      <recent name="com.glp.data.warehouse.service.impl.base" />
+      <recent name="com.glp.data.warehouse.entity.dw.risk" />
+      <recent name="com.glp.data.warehouse.dao.dw.risk" />
+      <recent name="com.glp.data.warehouse.configuration.datasource" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\uat\application" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\test\application" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\dev\application" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\uat\hbase" />
+      <recent name="C:\Users\Administrator\IdeaProjects\glp-backend-parent\hadoop-database-sample\src\main\resources\config\test\hbase" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean compile" />
+      <command value="mvn clean" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.GlpHadoopApplicationTest.getDataTest">
+    <configuration name="ArtemisScriptEngineApplicationTest.test22" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java8-script-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.glp.backend.engine.script.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.glp.backend.engine.script.test" />
+      <option name="MAIN_CLASS_NAME" value="com.glp.backend.engine.script.test.ArtemisScriptEngineApplicationTest" />
+      <option name="METHOD_NAME" value="test22" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtemisWareHouseApplicationTest2.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="multiple-database-sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.glp.data.warehouse.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.glp.data.warehouse.test" />
+      <option name="MAIN_CLASS_NAME" value="com.glp.data.warehouse.test.ArtemisWareHouseApplicationTest2" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlpHadoopApplicationTest.getDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hadoop-database-sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.glp.module.hbase.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.glp.module.hbase.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.glp.module.hbase.service.test.GlpHadoopApplicationTest" />
+      <option name="METHOD_NAME" value="getDataTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlpHadoopApplicationTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hadoop-database-sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.glp.module.hbase.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.glp.module.hbase.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.glp.module.hbase.service.test.GlpHadoopApplicationTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlpHadoopApplicationTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hadoop-database-sample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.glp.module.hbase.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.glp.module.hbase.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.glp.module.hbase.service.test.GlpHadoopApplicationTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtemisScriptEngineApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="java8-script-engine" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.engine.script.ArtemisScriptEngineApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtemisWareHouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="multiple-database-sample" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.data.warehouse.ArtemisWareHouseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlpHadoopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hadoop-database-sample" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.module.hbase.service.GlpHadoopApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlpKafkaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="middleware-kafka-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.module.kafka.service.GlpKafkaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tools-mybatis-generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.tools.MybatisGeneratorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisPlusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tools-mybatis-plus" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.tools.MybatisPlusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisTKApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tools-mybatis-tk" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.tools.MybatisTKApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisTKApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tools-mybatis-tk" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.tools.tk.MybatisTKApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RiskApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend-risk-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.api.RiskApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RiskRuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend-risk-rule" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.glp.backend.risk.rule.RiskRuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ArtemisWareHouseApplicationTest2.test" />
+      <item itemvalue="JUnit.GlpHadoopApplicationTest.test" />
+      <item itemvalue="JUnit.GlpHadoopApplicationTest.test2" />
+      <item itemvalue="JUnit.ArtemisScriptEngineApplicationTest.test22" />
+      <item itemvalue="JUnit.GlpHadoopApplicationTest.getDataTest" />
+      <item itemvalue="Spring Boot.MybatisTKApplication" />
+      <item itemvalue="Spring Boot.MybatisTKApplication (1)" />
+      <item itemvalue="Spring Boot.MybatisPlusApplication" />
+      <item itemvalue="Spring Boot.RiskApiApplication" />
+      <item itemvalue="Spring Boot.RiskRuleApplication" />
+      <item itemvalue="Spring Boot.GlpKafkaServiceApplication" />
+      <item itemvalue="Spring Boot.MybatisGeneratorApplication" />
+      <item itemvalue="Spring Boot.ArtemisScriptEngineApplication" />
+      <item itemvalue="Spring Boot.ArtemisWareHouseApplication" />
+      <item itemvalue="Spring Boot.GlpHadoopApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GlpHadoopApplicationTest.getDataTest" />
+        <item itemvalue="JUnit.ArtemisScriptEngineApplicationTest.test22" />
+        <item itemvalue="JUnit.GlpHadoopApplicationTest.test2" />
+        <item itemvalue="JUnit.GlpHadoopApplicationTest.test" />
+        <item itemvalue="JUnit.ArtemisWareHouseApplicationTest2.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3cd86eb6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3cd86eb6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@51c79b0f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b2d8cdc-d45f-47a8-bf83-a8dc43bfb410" name="Default Changelist" comment="" />
+      <created>1573639471199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573639471199</updated>
+      <workItem from="1573639474237" duration="3891000" />
+      <workItem from="1573644459122" duration="1958000" />
+      <workItem from="1573728210260" duration="9370000" />
+      <workItem from="1573806224174" duration="16985000" />
+      <workItem from="1574152716525" duration="1772000" />
+      <workItem from="1574154500937" duration="658000" />
+      <workItem from="1574155165406" duration="8756000" />
+      <workItem from="1574165593564" duration="14162000" />
+      <workItem from="1574252493392" duration="13166000" />
+      <workItem from="1574329211675" duration="20775000" />
+      <workItem from="1574415060147" duration="1094000" />
+      <workItem from="1574643590811" duration="4190000" />
+      <workItem from="1574736165729" duration="11743000" />
+      <workItem from="1574750375934" duration="1751000" />
+      <workItem from="1574771242077" duration="2021000" />
+      <workItem from="1574837986126" duration="1796000" />
+      <workItem from="1574852492612" duration="18312000" />
+      <workItem from="1575013847955" duration="4740000" />
+      <workItem from="1575022670759" duration="1362000" />
+      <workItem from="1575257126533" duration="15359000" />
+      <workItem from="1575421942999" duration="28053000" />
+      <workItem from="1575513810458" duration="6326000" />
+      <workItem from="1575539972437" duration="1201000" />
+      <workItem from="1575595041207" duration="1832000" />
+      <workItem from="1575598899696" duration="1329000" />
+      <workItem from="1575609828978" duration="1029000" />
+      <workItem from="1575618540006" duration="38000" />
+      <workItem from="1575623595808" duration="3566000" />
+      <workItem from="1575855000224" duration="5409000" />
+      <workItem from="1575879069335" duration="33439000" />
+      <workItem from="1576044452438" duration="539000" />
+      <workItem from="1576055582248" duration="1638000" />
+      <workItem from="1576069752145" duration="1557000" />
+      <workItem from="1576073833819" duration="1472000" />
+      <workItem from="1576075342455" duration="1756000" />
+      <workItem from="1576077106255" duration="698000" />
+      <workItem from="1576077812880" duration="306000" />
+      <workItem from="1576078124712" duration="478000" />
+      <workItem from="1576078609421" duration="1735000" />
+      <workItem from="1576080351798" duration="7185000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 45m 41s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 49m 08s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 51m 41s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 55m 42s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 57m 34s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 01h 59m 29s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 02h 01m 19s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 02h 02m 12s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 02h 03m 26s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GlpHadoopApplicationTest_getDataTest - 2019.12.12 at 02h 03m 49s.xml">
+      <configuration name="GlpHadoopApplicationTest.getDataTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15187000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="14" y="12" width="1886" height="1030" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25794086" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39910814" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run Dashboard" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Maven" order="1" visible="true" weight="0.2196057" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/glp_backend_parent$MybatisTKApplicationTest.ic" NAME="MybatisTKApplicationTest Coverage Results" MODIFIED="1574215121753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.glp.backend.risk.tools.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/glp_backend_parent$RiskApiApplicationTest_test5.ic" NAME="RiskApiApplicationTest.test5 Coverage Results" MODIFIED="1574998801579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.glp.backend.risk.api.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/glp_backend_parent$MybatisTKApplicationTest_test__1_.ic" NAME="MybatisTKApplicationTest.test (1) Coverage Results" MODIFIED="1574215265394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.glp.backend.risk.tools.test.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tools-mybatis-tk/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools-mybatis-tk/src/main/java/com/glp/backend/risk/tools/configuration/MybatisTKConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools-mybatis-generator/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="76" column="25" lean-forward="true" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/multiple-database-sample/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/test/hbase/hbase-test.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/dev/hbase/hbase-dev.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/hbase/uat/hbase-uat.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/java/com/glp/module/hbase/service/configuration/hbase/HbaseFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/dev/application/application-dev.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/test/application/application-test.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/hbase/uat/krb5-uat.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/uat/hbase/krb5-uat.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/hbase.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.9.RELEASE/spring-beans-5.1.9.RELEASE.jar!/org/springframework/beans/factory/support/SimpleInstantiationStrategy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/config/uat/application/application-uat.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/target/classes/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/target/classes/application-uat.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/target/classes/hbase-uat.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/target/classes/hbase.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/target/classes/hbase-site-uat.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/test/java/com/glp/module/hbase/service/test/GlpHadoopApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hadoop-database-sample/src/main/java/com/glp/module/hbase/service/configuration/hbase/HbaseConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="method#HbaseConfig#0;class#HbaseConfig#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="clean" />
+    <option value="clean compile" />
+  </component>
+</project>
